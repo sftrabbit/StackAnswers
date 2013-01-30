@@ -8,6 +8,8 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v13.app.FragmentPagerAdapter;
+import android.view.Menu;
+import android.view.MenuInflater;
 import java.util.List;
 import java.util.Collections;
 import java.util.Arrays;
@@ -35,6 +37,14 @@ public class StackSync extends Activity {
 
     initTabPager();
     initTabs();
+  }
+
+  @Override
+  public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.actions_stacksync, menu);
+
+    return super.onCreateOptionsMenu(menu);
   }
 
   private void initTabPager() {
