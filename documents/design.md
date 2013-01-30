@@ -64,8 +64,36 @@ a number of preferences for the user to customise the application.
 
 ### Navigation checklist
 
+*   Make sure the back stack and the Up button are predictable.
+
+## Action Bar
+
+Each activity should make some actions buttons available in the action
+bar. In addition, certian fragments may append their own actions. Apply
+the FIT scheme (Frequent/Important/Typical) to decide whether it should
+appear in the action bar or the action overflow.
+
+A "Settings" action should be available from all activities but must be
+in the action overflow.
+
+Consider the actions that should be available in each activity:
+
+*   **StackSync**
+    *   Search - The user can search for a particular stack exchange
+        site. They should be able to quickly get from here to a site
+        level search. (*Important*, *Typical*)
+    *   Notifications - The user can view their network-wide
+        notifications (which includes their inbox). Notifications will
+        also be shown through the Android notification system but this
+        action should show the number of unread notifications from
+        within the application. It should be found in the action bar
+        so it is effortlessly available. (*Important*)
+
+### Action bar checklist
+
 *   The network level provides relatively unrelated views and so should
     provide fixed tabs for switching between them.
+*   A "settings" action should be available from all activities, but
+    make sure it's in the action overflow.
 *   For different views of site level data, provide a spinner in the
     action bar.
-*   Make sure the back stack and the Up button are predictable.
