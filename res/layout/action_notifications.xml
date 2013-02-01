@@ -11,5 +11,5 @@
     android:layout_width="wrap_content"
     android:layout_gravity="center"
     android:textColor="@color/notifications_indicator"
-    android:text="5" />
+    android:text="99" />
 </FrameLayout>
