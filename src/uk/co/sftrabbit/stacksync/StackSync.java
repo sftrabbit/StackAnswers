@@ -41,7 +41,7 @@ public class StackSync extends Activity {
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
-    MenuInflater inflater = getMenuInflater();
+    final MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.actions_stacksync, menu);
 
     return super.onCreateOptionsMenu(menu);
@@ -62,7 +62,7 @@ public class StackSync extends Activity {
 
   private void addTab(int tabTextResourceId) {
     //TODO - setContentDescription on tab for accessibility
-    ActionBar.Tab tab = actionBar.newTab()
+    final ActionBar.Tab tab = actionBar.newTab()
       .setText(tabTextResourceId)
       .setTabListener(new TabListener(tabPager));
     actionBar.addTab(tab);
@@ -87,7 +87,7 @@ public class StackSync extends Activity {
 
   private static class TabPagerListener extends
       ViewPager.SimpleOnPageChangeListener {
-    private ActionBar actionBar;
+    private final ActionBar actionBar;
 
     public TabPagerListener(ActionBar actionBar) {
       this.actionBar = actionBar;
@@ -100,7 +100,7 @@ public class StackSync extends Activity {
   }
 
   private static class TabListener implements ActionBar.TabListener {
-    private ViewPager tabPager;
+    private final ViewPager tabPager;
 
     public TabListener(ViewPager tabPager) {
       this.tabPager = tabPager;

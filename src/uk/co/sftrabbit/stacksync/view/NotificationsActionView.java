@@ -13,7 +13,7 @@ import uk.co.sftrabbit.stacksync.R;
 
 class NotificationsActionView extends FrameLayout
     implements View.OnLongClickListener {
-  private Context context;
+  private final Context context;
 
   public NotificationsActionView(Context context) {
     this(context, null);
@@ -24,11 +24,11 @@ class NotificationsActionView extends FrameLayout
 
     this.context = context;
 
-    LayoutInflater inflater = (LayoutInflater) context
+    final LayoutInflater inflater = (LayoutInflater) context
       .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     inflater.inflate(R.layout.action_notifications, this);
 
-    ImageButton button =
+    final ImageButton button =
       (ImageButton) findViewById(R.id.button_notifications);
     assert button != null : "No button in notifications action layout";
     button.setOnLongClickListener(this);
@@ -47,8 +47,8 @@ class NotificationsActionView extends FrameLayout
     final int screenWidth = context.getResources()
       .getDisplayMetrics().widthPixels;
 
-    Toast tooltip = Toast.makeText(context, R.string.action_notifications,
-      Toast.LENGTH_SHORT);
+    final Toast tooltip = Toast.makeText(context,
+      R.string.action_notifications, Toast.LENGTH_SHORT);
     if (centerY < displayFrame.height()) {
       tooltip.setGravity(Gravity.TOP | Gravity.RIGHT,
         screenWidth - screenPosition[0] - width / 2, height);
