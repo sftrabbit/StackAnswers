@@ -11,7 +11,7 @@ import android.widget.ImageButton;
 import android.widget.Toast;
 import uk.co.sftrabbit.stacksync.R;
 
-class NotificationsActionView extends FrameLayout
+public class NotificationsActionView extends FrameLayout
     implements View.OnLongClickListener {
   private final Context context;
 
