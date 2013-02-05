@@ -8,8 +8,11 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v13.app.FragmentPagerAdapter;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.View;
+import android.widget.PopupMenu;
 import java.util.List;
 import java.util.Collections;
 import java.util.Arrays;
@@ -68,6 +71,16 @@ public class StackSync extends Activity {
     actionBar.addTab(tab);
   }
 
+  public void onDropdownClick(View v) {
+    //TODO - Inflate this menu instead of hardcoding it
+    final PopupMenu popupMenu = new PopupMenu(this, v);
+    final Menu menu = popupMenu.getMenu();
+    menu.add("Meta Site");
+    menu.add("Your Account");
+    menu.add("Open in Browser");
+    popupMenu.show();
+  }
+
   private static class TabPagerAdapter extends FragmentPagerAdapter {
     public TabPagerAdapter(FragmentManager fragmentManager) {
       super(fragmentManager);
@@ -80,7 +93,10 @@ public class StackSync extends Activity {
 
     @Override
     public Fragment getItem(int position) {
-      //TODO - Return correct fragments rather than empty fragment
+      //TODO - Manage mapping to fragments in a nicer way
+      if (position == 1) {
+        return new SitesFragment();
+      }
       return new Fragment();
     }
   }
