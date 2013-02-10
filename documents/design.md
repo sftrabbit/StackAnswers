@@ -5,7 +5,26 @@ Design](http://developer.android.com/design/index.html) guidelines are
 gospel. StackSync must be intricately crafted to meet the expectations
 of an exceptional application.
 
-## Structure
+## Style
+
+### Iconography
+
+To create the launcher icons for each screen density, apply the
+following Photoshop process to the SVG application logo:
+
+1.  Each block in the stack should have an **inner shadow**: color:
+    `#000000`; angle: -90; opacity: 8%; distance: 1px; choke: 0%;
+    size: 0px.
+2.  The top block should have an extra **inner shadow**: color:
+    `#7ec0dc`; angle: 90; opacity: 100%; distance: 1px; choke: 0%;
+    size: 0px.
+3.  The whole icon should be given an **outer glow**: color: `#113154`;
+    opacity: 80%; technique: precise; spread: 0%; size: 1px,
+4.  Remove any faint shadow from between blocks if necessary.
+
+## Patterns
+
+### Structure
 
 StackSync has a fairly deep hierarchical structure due to the complexity
 of the Stack Exchange network. Within this structure there are a range
@@ -48,7 +67,7 @@ In addition to these main sections, there are ancillary sections to help
 the user manage the application itself. For example, there will likely be
 a number of preferences for the user to customise the application.
 
-### Structure checklist
+#### Structure checklist
 
 *   The start screen should put content forward - new content, favourite
     content, etc. It should gradually come to know the user and present
@@ -60,13 +79,13 @@ a number of preferences for the user to customise the application.
 *   Make browsing the hierarchy of data easier by providing horizontal
     navigation and shortcuts.
 
-## Navigation
+### Navigation
 
-### Navigation checklist
+#### Navigation checklist
 
 *   Make sure the back stack and the Up button are predictable.
 
-## Action Bar
+### Action Bar
 
 Each activity should make some actions buttons available in the action
 bar. In addition, certian fragments may append their own actions. Apply
@@ -89,7 +108,7 @@ Consider the actions that should be available in each activity:
         within the application. It should be found in the action bar
         so it is effortlessly available. (*Important*)
 
-### Action bar checklist
+#### Action bar checklist
 
 *   The network level provides relatively unrelated views and so should
     provide fixed tabs for switching between them.
