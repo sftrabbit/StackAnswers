@@ -93,19 +93,19 @@ public class SitesFragment extends ListFragment {
       }
 
       final TextView nameView = (TextView)
-        convertView.findViewById(R.id.test_list_name);
+        convertView.findViewById(R.id.site_name);
       if (nameView != null) {
         nameView.setText(site.getName());
       }
 
       final TextView audienceView = (TextView)
-        convertView.findViewById(R.id.test_list_audience);
+        convertView.findViewById(R.id.site_audience);
       if (audienceView != null) {
         audienceView.setText(site.getAudience());
       }
 
       final ImageView iconView = (ImageView)
-        convertView.findViewById(R.id.test_list_icon);
+        convertView.findViewById(R.id.site_icon);
       if (iconView != null) {
         iconView.setImageResource(site.getIconResource());
       }
