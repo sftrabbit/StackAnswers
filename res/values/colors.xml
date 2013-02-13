@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <color name="notifications_indicator">#ddd</color>
+
+  <color name="badge_gold">#fc0</color>
+  <color name="badge_silver">#c5c5c5</color>
+  <color name="badge_bronze">#c96</color>
 </resources>
