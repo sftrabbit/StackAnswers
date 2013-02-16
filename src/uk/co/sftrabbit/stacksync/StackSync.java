@@ -8,7 +8,6 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
@@ -21,9 +20,12 @@ public class StackSync extends Activity {
   private ActionBar actionBar;
   private ViewPager tabPager;
 
-  private static final List<Integer> TAB_TEXT_RESOURCE_IDS =
+  //TODO - give content descriptions for accessibility
+  private static final List<TabSpec> TAB_SPECS =
     Collections.unmodifiableList(Arrays.asList(
-      R.string.tab_dashboard, R.string.tab_sites, R.string.tab_accounts
+      new TabSpec(R.string.tab_dashboard, 0, null),
+      new TabSpec(R.string.tab_sites, 0, SitesFragment.class),
+      new TabSpec(R.string.tab_accounts, 0, null)
     ));
 
   @Override
@@ -58,17 +60,15 @@ public class StackSync extends Activity {
   private void initTabs() {
     actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-    for (int tabTextResourceId : TAB_TEXT_RESOURCE_IDS) {
-      addTab(tabTextResourceId);
+    for (TabSpec tabSpec : TAB_SPECS) {
+      addTab(tabSpec);
     }
   }
 
-  private void addTab(int tabTextResourceId) {
-    //TODO - setContentDescription on tab for accessibility
-    final ActionBar.Tab tab = actionBar.newTab()
-      .setText(tabTextResourceId)
-      .setTabListener(new TabListener(tabPager));
-    actionBar.addTab(tab);
+  private void addTab(TabSpec tabSpec) {
+    final ActionBar.Tab tab = actionBar.newTab();
+    tab.setTabListener(new TabListener(tabPager));
+    actionBar.addTab(tabSpec.applyTo(tab));
   }
 
   public void onDropdownClick(View v) {
@@ -81,6 +81,41 @@ public class StackSync extends Activity {
     popupMenu.show();
   }
 
+  private static class TabSpec {
+    private int tabTextResourceId;
+    private int contentDescriptionResourceId;
+    private Class fragmentClass;
+
+    public TabSpec(int tabTextResourceId, int contentDescriptionResourceId,
+        Class fragmentClass) {
+      this.tabTextResourceId = tabTextResourceId;
+      this.contentDescriptionResourceId = contentDescriptionResourceId;
+      this.fragmentClass = fragmentClass;
+    }
+
+    public ActionBar.Tab applyTo(ActionBar.Tab tab) {
+      if (tabTextResourceId != 0) {
+        tab.setText(tabTextResourceId);
+      }
+      if (contentDescriptionResourceId != 0) {
+        tab.setContentDescription(contentDescriptionResourceId);
+      }
+      return tab;
+    }
+
+    public Fragment createFragment() {
+      try {
+        if (fragmentClass != null) {
+          return (Fragment) fragmentClass.getConstructor().newInstance();
+        } else {
+          return new Fragment();
+        }
+      } catch (Exception exception) {
+        return null;
+      }
+    }
+  }
+
   private static class TabPagerAdapter extends FragmentPagerAdapter {
     public TabPagerAdapter(FragmentManager fragmentManager) {
       super(fragmentManager);
@@ -88,16 +123,12 @@ public class StackSync extends Activity {
 
     @Override
     public int getCount() {
-      return TAB_TEXT_RESOURCE_IDS.size();
+      return TAB_SPECS.size();
     }
 
     @Override
     public Fragment getItem(int position) {
-      //TODO - Manage mapping to fragments in a nicer way
-      if (position == 1) {
-        return new SitesFragment();
-      }
-      return new Fragment();
+      return TAB_SPECS.get(position).createFragment();
     }
   }
 
