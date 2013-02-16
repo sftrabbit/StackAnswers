@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-  <item android:id="@+id/action_search"
+  <item
+    android:id="@+id/action_search"
     android:title="@string/action_search_sites"
     android:titleCondensed="@string/action_search_sites_condensed"
     android:icon="@drawable/icon_action_search"
     android:showAsAction="ifRoom|collapseActionView"
     android:actionViewClass="android.widget.SearchView" />
-  <item android:id="@+id/action_notifications"
+  <item
+    android:id="@+id/action_notifications"
     android:title="@string/action_notifications"
     android:titleCondensed="@string/action_notifications_condensed"
     android:showAsAction="ifRoom"
     android:actionViewClass="uk.co.sftrabbit.stacksync.view.NotificationsActionView" />
-  <item android:id="@+id/action_settings"
+  <item
+    android:id="@+id/action_settings"
     android:title="@string/action_settings"
     android:showAsAction="never" />
 </menu>

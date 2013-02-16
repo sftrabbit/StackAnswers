@@ -2,12 +2,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
   android:layout_height="wrap_content"
   android:layout_width="wrap_content">
-  <ImageButton android:id="@+id/button_notifications"
+  <ImageButton
+    android:id="@+id/button_notifications"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     android:src="@drawable/icon_action_notifications"
     style="@android:style/Widget.ActionButton" />
-  <TextView android:layout_height="wrap_content"
+  <TextView
+    android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     android:layout_gravity="center"
     android:textColor="@color/notifications_indicator"
