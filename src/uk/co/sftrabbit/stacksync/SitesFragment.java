@@ -34,6 +34,9 @@ public class SitesFragment extends ListFragment {
       "Contractors and serious DIYers", 0));
   }};
 
+  private static final int LIST_PADDING_HORIZONTAL = 16;
+  private static final int LIST_PADDING_VERTICAL = 0;
+
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -49,7 +52,8 @@ public class SitesFragment extends ListFragment {
       savedInstanceState);
     ListView listView =
       (ListView) view.findViewById(android.R.id.list);
-    listView.setPadding(16, 0, 16, 0);
+    listView.setPadding(LIST_PADDING_HORIZONTAL, LIST_PADDING_VERTICAL,
+      LIST_PADDING_HORIZONTAL, LIST_PADDING_VERTICAL);
     listView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
     return view; 
