@@ -25,7 +25,7 @@ public class StackSync extends Activity {
     Collections.unmodifiableList(Arrays.asList(
       new TabSpec(R.string.tab_dashboard, 0, null),
       new TabSpec(R.string.tab_sites, 0, SitesFragment.class),
-      new TabSpec(R.string.tab_accounts, 0, null)
+      new TabSpec(R.string.tab_accounts, 0, AccountsFragment.class)
     ));
 
   @Override
