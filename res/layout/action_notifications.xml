@@ -6,12 +6,12 @@
     android:id="@+id/button_notifications"
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
-    android:src="@drawable/icon_action_notifications"
+    android:src="@drawable/shape_action_notifications"
     style="@android:style/Widget.ActionButton" />
   <TextView
     android:layout_height="wrap_content"
     android:layout_width="wrap_content"
     android:layout_gravity="center"
     android:textColor="@color/notifications_indicator"
-    android:text="99" />
+    android:text="19" />
 </FrameLayout>
