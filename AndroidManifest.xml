@@ -5,6 +5,7 @@
   <application
     android:label="@string/application_name"
     android:icon="@drawable/icon_launcher"
+    android:logo="@drawable/icon_actionbar"
     android:theme="@style/Theme.StackSync">
     <activity android:name=".StackSync">
       <intent-filter>
