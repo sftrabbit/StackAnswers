@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="Theme.StackSync" parent="@android:style/Theme.Holo.Light">
+  <style name="Theme.StackSync" parent="@android:style/Theme.Holo.Light.DarkActionBar">
     <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
     <item name="android:actionBarTabStyle">@style/Widget.ActionBar.TabView</item>
     <item name="android:actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>
   </style>
   
-  <style name="Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid">
-    <item name="android:titleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Title.Inverse</item>
-    <item name="android:subtitleTextStyle">@android:style/TextAppearance.Holo.Widget.ActionBar.Subtitle.Inverse</item>
+  <style name="Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <item name="android:icon">@drawable/icon_actionbar</item>
     <item name="android:background">#2470bc</item>
     <item name="android:backgroundStacked">@drawable/ab_stacked_solid</item>
   </style>
