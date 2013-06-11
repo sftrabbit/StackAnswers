@@ -5,11 +5,16 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v13.app.FragmentPagerAdapter;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 import java.util.List;
@@ -19,6 +24,8 @@ import java.util.Arrays;
 public class StackSync extends Activity {
   private ActionBar actionBar;
   private ViewPager tabPager;
+  private DrawerLayout drawerLayout;
+  private ActionBarDrawerToggle drawerToggle;
 
   //TODO - give content descriptions for accessibility
   private static final List<TabSpec> TAB_SPECS =
@@ -40,8 +47,28 @@ public class StackSync extends Activity {
     tabPager = (ViewPager) findViewById(R.id.tab_pager);
     assert tabPager != null : "No tab pager in layout";
 
+    drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
+    drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
+    drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
+      R.drawable.icon_drawer, 0, 0);
+    drawerLayout.setDrawerListener(drawerToggle);
+    actionBar.setDisplayHomeAsUpEnabled(true);
+    actionBar.setHomeButtonEnabled(true);
+
     initTabPager();
     initTabs();
+  }
+
+  @Override
+  protected void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+    drawerToggle.syncState();
+  }
+
+  @Override
+  public void onConfigurationChanged(Configuration newConfig) {
+    super.onConfigurationChanged(newConfig);
+    drawerToggle.onConfigurationChanged(newConfig);
   }
 
   @Override
@@ -50,6 +77,15 @@ public class StackSync extends Activity {
     inflater.inflate(R.menu.actions_stacksync, menu);
 
     return super.onCreateOptionsMenu(menu);
+  }
+
+  @Override
+  public boolean onOptionsItemSelected(MenuItem item) {
+    if (drawerToggle.onOptionsItemSelected(item)) {
+      return false;
+    }
+
+    return super.onOptionsItemSelected(item);
   }
 
   private void initTabPager() {
@@ -67,7 +103,7 @@ public class StackSync extends Activity {
 
   private void addTab(TabSpec tabSpec) {
     final ActionBar.Tab tab = actionBar.newTab();
-    tab.setTabListener(new TabListener(tabPager));
+    tab.setTabListener(new TabListener(tabPager, drawerLayout));
     actionBar.addTab(tabSpec.applyTo(tab));
   }
 
@@ -148,16 +184,21 @@ public class StackSync extends Activity {
 
   private static class TabListener implements ActionBar.TabListener {
     private final ViewPager tabPager;
+    private final DrawerLayout drawerLayout;
 
-    public TabListener(ViewPager tabPager) {
+    public TabListener(ViewPager tabPager, DrawerLayout drawerLayout) {
       this.tabPager = tabPager;
+      this.drawerLayout = drawerLayout;
     }
 
     public void onTabReselected(ActionBar.Tab tab,
-        FragmentTransaction transaction) { }
+        FragmentTransaction transaction) {
+      drawerLayout.closeDrawers();
+    }
 
     public void onTabSelected(ActionBar.Tab tab,
         FragmentTransaction transaction) {
+      drawerLayout.closeDrawers();
       tabPager.setCurrentItem(tab.getPosition());
     }
 
