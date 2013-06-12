@@ -9,9 +9,5 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
   </android.support.v4.view.ViewPager>
-  <FrameLayout
-    android:layout_width="240dp"
-    android:layout_height="match_parent"
-    android:layout_gravity="start"
-    android:background="#e9e9e9" />
+  <FrameLayout style="@style/Widget.NavigationDrawer" />
 </android.support.v4.widget.DrawerLayout>
