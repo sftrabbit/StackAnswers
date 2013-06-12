@@ -1,4 +1,4 @@
-package uk.co.sftrabbit.stacksync;
+package uk.co.sftrabbit.stackanswers;
 
 import android.app.ListFragment;
 import android.content.Context;

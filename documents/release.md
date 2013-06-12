@@ -1,6 +1,6 @@
 # Release
 
-Checklist for releasing a new version of StackSync:
+Checklist for releasing a new version of Stack Answers:
 
 *   Update the `versionCode` and `versionName` attributes of
     `<manifest>` (for first release, add these attributes).

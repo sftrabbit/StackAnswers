@@ -1,4 +1,4 @@
-package uk.co.sftrabbit.stacksync;
+package uk.co.sftrabbit.stackanswers;
 
 import android.app.Activity;
 import android.app.ActionBar;
@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Collections;
 import java.util.Arrays;
 
-public class StackSync extends Activity {
+public class NetworkActivity extends Activity {
   private ActionBar actionBar;
   private ViewPager tabPager;
   private DrawerLayout drawerLayout;
@@ -39,7 +39,7 @@ public class StackSync extends Activity {
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
 
-    setContentView(R.layout.activity_stacksync);
+    setContentView(R.layout.activity_network);
 
     actionBar = getActionBar();
     assert actionBar != null : "No action bar in activity";
@@ -58,7 +58,7 @@ public class StackSync extends Activity {
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     final MenuInflater inflater = getMenuInflater();
-    inflater.inflate(R.menu.actions_stacksync, menu);
+    inflater.inflate(R.menu.actions_network, menu);
 
     return super.onCreateOptionsMenu(menu);
   }

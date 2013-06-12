@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <string name="application_name">StackSync</string>
+  <string name="application_name">Stack Answers</string>
 
   <string name="tab_hot">What\'s hot</string>
   <string name="tab_sites">Sites</string>

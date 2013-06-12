@@ -12,7 +12,7 @@
     android:title="@string/action_notifications"
     android:titleCondensed="@string/action_notifications_condensed"
     android:showAsAction="ifRoom"
-    android:actionViewClass="uk.co.sftrabbit.stacksync.view.NotificationsActionView" />
+    android:actionViewClass="uk.co.sftrabbit.stackanswers.view.NotificationsActionView" />
   <item
     android:id="@+id/action_settings"
     android:title="@string/action_settings"

@@ -1,4 +1,4 @@
-package uk.co.sftrabbit.stacksync.view;
+package uk.co.sftrabbit.stackanswers.view;
 
 import android.content.Context;
 import android.graphics.Rect;
@@ -9,7 +9,7 @@ import android.view.Gravity;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.Toast;
-import uk.co.sftrabbit.stacksync.R;
+import uk.co.sftrabbit.stackanswers.R;
 
 public class NotificationsActionView extends FrameLayout
     implements View.OnLongClickListener {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="Theme.StackSync" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+  <style name="Theme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
     <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
     <item name="android:actionBarTabStyle">@style/Widget.ActionBar.TabView</item>
     <item name="android:actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>

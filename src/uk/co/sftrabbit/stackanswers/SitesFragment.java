@@ -1,8 +1,12 @@
-package uk.co.sftrabbit.stacksync;
+package uk.co.sftrabbit.stackanswers;
 
 import android.app.ListFragment;
 import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,8 +38,8 @@ public class SitesFragment extends ListFragment {
       "Contractors and serious DIYers", 0));
   }};
 
-  private static final int LIST_PADDING_HORIZONTAL = 16;
-  private static final int LIST_PADDING_VERTICAL = 0;
+  private static final int LIST_PADDING_HORIZONTAL = 8;
+  private static final int LIST_PADDING_VERTICAL = 8;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -52,8 +56,18 @@ public class SitesFragment extends ListFragment {
       savedInstanceState);
     ListView listView =
       (ListView) view.findViewById(android.R.id.list);
-    listView.setPadding(LIST_PADDING_HORIZONTAL, LIST_PADDING_VERTICAL,
-      LIST_PADDING_HORIZONTAL, LIST_PADDING_VERTICAL);
+
+    Resources resources = getResources();
+    DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+    int paddingHorizontal = (int) TypedValue.applyDimension(
+      TypedValue.COMPLEX_UNIT_DIP, LIST_PADDING_HORIZONTAL,
+      displayMetrics);
+    int paddingVertical = (int) TypedValue.applyDimension(
+      TypedValue.COMPLEX_UNIT_DIP, LIST_PADDING_VERTICAL,
+      displayMetrics);
+
+    listView.setPadding(paddingHorizontal, paddingVertical,
+      paddingHorizontal, paddingVertical);
     listView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
     return view; 

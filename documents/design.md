@@ -2,7 +2,7 @@
 
 When it comes to designing Android applications, the [Android
 Design](http://developer.android.com/design/index.html) guidelines are
-gospel. StackSync must be intricately crafted to meet the expectations
+gospel. Stack Answers must be intricately crafted to meet the expectations
 of an exceptional application.
 
 ## Style
@@ -26,7 +26,7 @@ following Photoshop process to the SVG application logo:
 
 ### Structure
 
-StackSync has a fairly deep hierarchical structure due to the complexity
+Stack Answers has a fairly deep hierarchical structure due to the complexity
 of the Stack Exchange network. Within this structure there are a range
 of different views of data. However, the application can easily be
 divided into two distinct levels of data:
@@ -72,8 +72,8 @@ a number of preferences for the user to customise the application.
 *   The start screen should put content forward - new content, favourite
     content, etc. It should gradually come to know the user and present
     them with interesting content.
-*   At the top level, the action bar should display 'StackSync' and the
-    StackSync logo.
+*   At the top level, the action bar should display 'Stack Answers' and
+    the Stack Answers logo.
 *   A search action should be included in the action bar in all
     searchable sections.
 *   Make browsing the hierarchy of data easier by providing horizontal
@@ -97,7 +97,7 @@ in the action overflow.
 
 Consider the actions that should be available in each activity:
 
-*   **StackSync**
+*   **Network**
     *   Search - The user can search for a particular stack exchange
         site. They should be able to quickly get from here to a site
         level search. (*Important*, *Typical*)
