@@ -42,27 +42,11 @@ public class StackSync extends Activity {
     setContentView(R.layout.activity_stacksync);
 
     actionBar = getActionBar();
-    assert actionBar != null : "No action bar available";
-
-    tabPager = (ViewPager) findViewById(R.id.tab_pager);
-    assert tabPager != null : "No tab pager in layout";
-
-    drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
-    drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
-    drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
-      R.drawable.icon_drawer, 0, 0);
-    drawerLayout.setDrawerListener(drawerToggle);
-    actionBar.setDisplayHomeAsUpEnabled(true);
-    actionBar.setHomeButtonEnabled(true);
+    assert actionBar != null : "No action bar in activity";
 
     initTabPager();
+    initNavigationDrawer();
     initTabs();
-  }
-
-  @Override
-  protected void onPostCreate(Bundle savedInstanceState) {
-    super.onPostCreate(savedInstanceState);
-    drawerToggle.syncState();
   }
 
   @Override
@@ -88,9 +72,41 @@ public class StackSync extends Activity {
     return super.onOptionsItemSelected(item);
   }
 
+  public void onDropdownClick(View v) {
+    //TODO - Inflate this menu instead of hardcoding it
+    final PopupMenu popupMenu = new PopupMenu(this, v);
+    final Menu menu = popupMenu.getMenu();
+    menu.add("Meta Site");
+    menu.add("Your Account");
+    menu.add("Open in Browser");
+    popupMenu.show();
+  }
+
+  @Override
+  protected void onPostCreate(Bundle savedInstanceState) {
+    super.onPostCreate(savedInstanceState);
+    drawerToggle.syncState();
+  }
+
   private void initTabPager() {
+    tabPager = (ViewPager) findViewById(R.id.tab_pager);
+    assert tabPager != null : "No tab pager in activity";
+
     tabPager.setAdapter(new TabPagerAdapter(getFragmentManager()));
     tabPager.setOnPageChangeListener(new TabPagerListener(actionBar));
+  }
+
+  private void initNavigationDrawer() {
+    actionBar.setDisplayHomeAsUpEnabled(true);
+
+    drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
+    assert drawerLayout != null : "No navigation drawer in activity";
+
+    drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
+    drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
+      R.drawable.icon_drawer, R.string.action_open_navigation_drawer,
+      R.string.action_close_navigation_drawer);
+    drawerLayout.setDrawerListener(drawerToggle);
   }
 
   private void initTabs() {
@@ -105,16 +121,6 @@ public class StackSync extends Activity {
     final ActionBar.Tab tab = actionBar.newTab();
     tab.setTabListener(new TabListener(tabPager, drawerLayout));
     actionBar.addTab(tabSpec.applyTo(tab));
-  }
-
-  public void onDropdownClick(View v) {
-    //TODO - Inflate this menu instead of hardcoding it
-    final PopupMenu popupMenu = new PopupMenu(this, v);
-    final Menu menu = popupMenu.getMenu();
-    menu.add("Meta Site");
-    menu.add("Your Account");
-    menu.add("Open in Browser");
-    popupMenu.show();
   }
 
   private static class TabSpec {
