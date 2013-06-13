@@ -23,23 +23,24 @@ import java.util.HashMap;
 public class SitesFragment extends ListFragment {
   private ArrayList<Site> sites = new ArrayList<Site>() {{
     add(new Site("Stack Overflow",
-      "Professional and enthusiast programmers", 0));
+      "Professional and enthusiast programmers", R.drawable.site_stackoverflow));
     add(new Site("Super User",
-      "Computer enthusiasts and power users", 0));
+      "Computer enthusiasts and power users", R.drawable.site_superuser));
     add(new Site("Webmasters",
-      "Pro webmasters", 0));
+      "Pro webmasters", R.drawable.site_webmasters));
     add(new Site("Game Development",
-      "Professional and independent game developers", 0));
+      "Professional and independent game developers", R.drawable.site_gamedevelopment));
     add(new Site("Photography",
-      "Professional, enthusiast and amateur photographers", 0));
+      "Professional, enthusiast and amateur photographers", R.drawable.site_photography));
     add(new Site("Mathematics", "People studying math at any" +
-      "level and professionals in related fields", 0));
+      "level and professionals in related fields", R.drawable.site_mathematics));
     add(new Site("Home Improvement",
-      "Contractors and serious DIYers", 0));
+      "Contractors and serious DIYers", R.drawable.site_homeimprovement));
   }};
 
   private static final int LIST_PADDING_HORIZONTAL = 8;
   private static final int LIST_PADDING_VERTICAL = 8;
+  private static final int LIST_ITEM_SEPERATION = 8;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -57,6 +58,8 @@ public class SitesFragment extends ListFragment {
     ListView listView =
       (ListView) view.findViewById(android.R.id.list);
 
+    listView.setBackgroundColor(0xffe9e9e9);
+
     Resources resources = getResources();
     DisplayMetrics displayMetrics = resources.getDisplayMetrics();
     int paddingHorizontal = (int) TypedValue.applyDimension(
@@ -65,10 +68,16 @@ public class SitesFragment extends ListFragment {
     int paddingVertical = (int) TypedValue.applyDimension(
       TypedValue.COMPLEX_UNIT_DIP, LIST_PADDING_VERTICAL,
       displayMetrics);
+    int seperation = (int) TypedValue.applyDimension(
+      TypedValue.COMPLEX_UNIT_DIP, LIST_ITEM_SEPERATION,
+      displayMetrics);
 
     listView.setPadding(paddingHorizontal, paddingVertical,
       paddingHorizontal, paddingVertical);
     listView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
+
+    listView.setDivider(resources.getDrawable(android.R.color.transparent));
+    listView.setDividerHeight(seperation);
 
     return view; 
   }
