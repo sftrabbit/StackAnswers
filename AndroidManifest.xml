@@ -7,7 +7,8 @@
     android:label="@string/application_name"
     android:icon="@drawable/icon_launcher"
     android:logo="@drawable/icon_actionbar"
-    android:theme="@style/Theme">
+    android:theme="@style/Theme"
+    android:allowBackup="true">
     <activity android:name=".NetworkActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
