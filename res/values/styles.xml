@@ -44,8 +44,8 @@
     <item name="android:paddingBottom">4dp</item>
     <item name="android:paddingLeft">8dp</item>
     <item name="android:paddingRight">8dp</item>
-    <item name="android:background">#D3E2F2</item>
-    <item name="android:textColor">#2470bc</item>
+    <item name="android:background">@color/tag_background</item>
+    <item name="android:textColor">@color/tag_text</item>
     <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
   </style>
 </resources>

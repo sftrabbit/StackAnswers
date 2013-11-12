@@ -8,4 +8,7 @@
   <color name="badge_gold">#fc0</color>
   <color name="badge_silver">#c5c5c5</color>
   <color name="badge_bronze">#c96</color>
+
+  <color name="tag_background">#d3e2f2</color>
+  <color name="tag_text">#2470bc</color>
 </resources>
