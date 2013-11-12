@@ -58,8 +58,6 @@ public class SitesFragment extends ListFragment {
     ListView listView =
       (ListView) view.findViewById(android.R.id.list);
 
-    listView.setBackgroundColor(0xffe9e9e9);
-
     Resources resources = getResources();
     DisplayMetrics displayMetrics = resources.getDisplayMetrics();
     int paddingHorizontal = (int) TypedValue.applyDimension(
@@ -74,6 +72,7 @@ public class SitesFragment extends ListFragment {
 
     listView.setPadding(paddingHorizontal, paddingVertical,
       paddingHorizontal, paddingVertical);
+    listView.setClipToPadding(false);
     listView.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
 
     listView.setDivider(resources.getDrawable(android.R.color.transparent));
@@ -120,19 +119,13 @@ public class SitesFragment extends ListFragment {
       }
 
       final TextView nameView = (TextView)
-        convertView.findViewById(R.id.site_name);
+        convertView.findViewById(R.id.site_title);
       if (nameView != null) {
         nameView.setText(site.getName());
       }
 
-      final TextView audienceView = (TextView)
-        convertView.findViewById(R.id.site_audience);
-      if (audienceView != null) {
-        audienceView.setText(site.getAudience());
-      }
-
       final ImageView iconView = (ImageView)
-        convertView.findViewById(R.id.site_icon);
+        convertView.findViewById(R.id.site_image);
       if (iconView != null) {
         iconView.setImageResource(site.getIconResource());
       }
