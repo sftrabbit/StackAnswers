@@ -4,6 +4,7 @@
     <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
     <item name="android:actionBarTabStyle">@style/Widget.ActionBar.TabView</item>
     <item name="android:actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>
+    <item name="android:colorBackground">@color/application_background</item>
   </style>
   
   <style name="Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
