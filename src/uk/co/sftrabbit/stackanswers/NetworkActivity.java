@@ -75,7 +75,6 @@ public class NetworkActivity extends Activity {
     final PopupMenu popupMenu = new PopupMenu(this, v);
     final Menu menu = popupMenu.getMenu();
     menu.add("Meta Site");
-    menu.add("Your Account");
     menu.add("Open in Browser");
     popupMenu.show();
   }
