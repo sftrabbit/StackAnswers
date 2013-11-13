@@ -51,6 +51,10 @@ public class NotificationsActionView extends FrameLayout
 
   @Override
   public boolean onLongClick(View view) {
+    final View rootView = view.getRootView();
+    DrawerLayout drawerLayout = (DrawerLayout) rootView.findViewById(R.id.drawer_layout);
+    View notificationDrawer = rootView.findViewById(R.id.notification_drawer);
+
     final int[] screenPosition = new int[2];
     view.getLocationOnScreen(screenPosition);
     final Rect displayFrame = new Rect();
@@ -62,8 +66,13 @@ public class NotificationsActionView extends FrameLayout
     final int screenWidth = context.getResources()
       .getDisplayMetrics().widthPixels;
 
-    final Toast tooltip = Toast.makeText(context,
-      R.string.action_notifications, Toast.LENGTH_SHORT);
+    final int actionDescription =
+        (drawerLayout.isDrawerOpen(notificationDrawer) ?
+         R.string.action_notifications_close :
+         R.string.action_notifications_open);
+
+    final Toast tooltip = Toast.makeText(context, actionDescription,
+                                         Toast.LENGTH_SHORT);
     if (centerY < displayFrame.height()) {
       tooltip.setGravity(Gravity.TOP | Gravity.RIGHT,
         screenWidth - screenPosition[0] - width / 2, height);
