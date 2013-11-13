@@ -8,7 +8,6 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-//import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.view.Gravity;
@@ -31,8 +30,7 @@ public class NetworkActivity extends Activity {
   private static final List<TabSpec> TAB_SPECS =
     Collections.unmodifiableList(Arrays.asList(
       new TabSpec(R.string.tab_hot, 0, null),
-      new TabSpec(R.string.tab_sites, 0, SitesFragment.class),
-      new TabSpec(R.string.tab_accounts, 0, AccountsFragment.class)
+      new TabSpec(R.string.tab_sites, 0, SitesFragment.class)
     ));
 
   @Override

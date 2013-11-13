@@ -4,7 +4,6 @@
 
   <string name="tab_hot">What\'s hot</string>
   <string name="tab_sites">Sites</string>
-  <string name="tab_accounts">Accounts</string>
 
   <string name="action_search_sites">Search sites</string>
   <string name="action_search_sites_condensed">Search</string>
