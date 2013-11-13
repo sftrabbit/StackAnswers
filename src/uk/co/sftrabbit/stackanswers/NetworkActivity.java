@@ -8,7 +8,7 @@ import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
-import android.support.v4.app.ActionBarDrawerToggle;
+//import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.view.Gravity;
@@ -25,7 +25,7 @@ public class NetworkActivity extends Activity {
   private ActionBar actionBar;
   private ViewPager tabPager;
   private DrawerLayout drawerLayout;
-  private ActionBarDrawerToggle drawerToggle;
+  private DrawerToggle drawerToggle;
 
   //TODO - give content descriptions for accessibility
   private static final List<TabSpec> TAB_SPECS =
@@ -99,11 +99,12 @@ public class NetworkActivity extends Activity {
   private void initNavigationDrawer() {
     actionBar.setDisplayHomeAsUpEnabled(true);
 
-    drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer);
+    drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
     assert drawerLayout != null : "No navigation drawer in activity";
 
-    drawerLayout.setDrawerShadow(R.drawable.drawer_shadow, Gravity.START);
-    drawerToggle = new ActionBarDrawerToggle(this, drawerLayout,
+    drawerLayout.setDrawerShadow(R.drawable.drawer_shadow_left, Gravity.START);
+    drawerLayout.setDrawerShadow(R.drawable.drawer_shadow_right, Gravity.END);
+    drawerToggle = new DrawerToggle(this, drawerLayout,
       R.drawable.icon_drawer, R.string.action_open_navigation_drawer,
       R.string.action_close_navigation_drawer);
     drawerLayout.setDrawerListener(drawerToggle);

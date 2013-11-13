@@ -2,6 +2,7 @@ package uk.co.sftrabbit.stackanswers.view;
 
 import android.content.Context;
 import android.graphics.Rect;
+import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +13,7 @@ import android.widget.Toast;
 import uk.co.sftrabbit.stackanswers.R;
 
 public class NotificationsActionView extends FrameLayout
-    implements View.OnLongClickListener {
+    implements View.OnLongClickListener, View.OnClickListener {
   private final Context context;
 
   public NotificationsActionView(Context context) {
@@ -31,7 +32,21 @@ public class NotificationsActionView extends FrameLayout
     final ImageButton button =
       (ImageButton) findViewById(R.id.button_notifications);
     assert button != null : "No button in notifications action layout";
+    button.setOnClickListener(this);
     button.setOnLongClickListener(this);
+  }
+
+  @Override
+  public void onClick(View view) {
+    final View rootView = view.getRootView();
+    DrawerLayout drawerLayout = (DrawerLayout) rootView.findViewById(R.id.drawer_layout);
+    View notificationDrawer = rootView.findViewById(R.id.notification_drawer);
+
+    final boolean isDrawerOpen = drawerLayout.isDrawerOpen(notificationDrawer);
+    drawerLayout.closeDrawers();
+    if (!isDrawerOpen) {
+      drawerLayout.openDrawer(notificationDrawer);
+    }
   }
 
   @Override
