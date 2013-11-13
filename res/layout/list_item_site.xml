@@ -6,12 +6,14 @@
   android:background="@drawable/background_card">
   <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:padding="4dp">
     <ImageView android:id="@+id/site_image"
       android:layout_width="72dp"
       android:layout_height="72dp"
       android:layout_alignParentTop="true"
-      android:layout_alignParentLeft="true" />
+      android:layout_alignParentLeft="true"
+      android:paddingRight="4dp" />
     <TextView android:id="@+id/site_title"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
@@ -24,8 +26,7 @@
       android:layout_height="wrap_content"
       android:layout_below="@id/site_title"
       android:layout_toRightOf="@id/site_image"
-      android:layout_marginTop="4dp"
-      android:layout_marginBottom="16dp">
+      android:layout_marginTop="4dp">
       <TextView
         style="@style/Widget.Tag"
         android:layout_marginRight="8dp"
@@ -41,6 +42,50 @@
   </RelativeLayout>
   <LinearLayout
     android:layout_width="match_parent"
-    android:layout_height="32dp"
-    android:background="#eef4f4f4" />
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:background="#eef4f4f4"
+    android:textAppearance="?android:attr/textAppearanceSmall"
+    android:textColor="?android:attr/textColorTertiary">
+    <ImageView
+      android:layout_width="32dp"
+      android:layout_height="32dp"
+      android:src="@drawable/profile_image_placeholder" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="8dp"
+      android:layout_marginRight="4dp"
+      android:textStyle="bold"
+      android:text="38,720" />
+    <ImageView
+      android:layout_width="10dp"
+      android:layout_height="10dp"
+      android:layout_margin="4dp"
+      android:src="@drawable/shape_badge_gold" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="3" />
+    <ImageView
+      android:layout_width="10dp"
+      android:layout_height="10dp"
+      android:layout_margin="4dp"
+      android:src="@drawable/shape_badge_silver" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="39" />
+    <ImageView
+      android:layout_width="10dp"
+      android:layout_height="10dp"
+      android:layout_margin="4dp"
+      android:src="@drawable/shape_badge_bronze" />
+    <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="116" />
+  </LinearLayout>
 </LinearLayout>
