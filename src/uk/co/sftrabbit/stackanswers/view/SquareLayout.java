@@ -1,15 +1,9 @@
 package uk.co.sftrabbit.stackanswers.view;
 
 import android.content.Context;
-import android.graphics.Rect;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.Gravity;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
-import android.widget.Toast;
-import uk.co.sftrabbit.stackanswers.R;
 
 public class SquareLayout extends FrameLayout {
   private final Context context;

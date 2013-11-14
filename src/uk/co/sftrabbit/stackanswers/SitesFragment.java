@@ -3,7 +3,6 @@ package uk.co.sftrabbit.stackanswers;
 import android.app.ListFragment;
 import android.content.Context;
 import android.content.res.Resources;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -13,12 +12,9 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import java.lang.String;
 import java.util.ArrayList;
-import java.util.Map;
-import java.util.HashMap;
 
 public class SitesFragment extends ListFragment {
   private ArrayList<Site> sites = new ArrayList<Site>() {{
