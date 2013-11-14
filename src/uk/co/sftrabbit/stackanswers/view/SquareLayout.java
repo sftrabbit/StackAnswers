@@ -6,16 +6,12 @@ import android.view.View;
 import android.widget.FrameLayout;
 
 public class SquareLayout extends FrameLayout {
-  private final Context context;
-
   public SquareLayout(Context context) {
     this(context, null);
   }
 
   public SquareLayout(Context context, AttributeSet attrs) {
     super(context, attrs);
-
-    this.context = context;
   }
 
   @Override
