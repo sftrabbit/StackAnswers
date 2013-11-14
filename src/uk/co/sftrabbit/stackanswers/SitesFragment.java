@@ -13,7 +13,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import java.lang.String;
 import java.util.ArrayList;
 
 public class SitesFragment extends ListFragment {
