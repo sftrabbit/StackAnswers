@@ -145,10 +145,10 @@ public class NetworkActivity extends Activity {
 
     public Fragment createFragment() {
       try {
-        if (fragmentClass != null) {
-          return (Fragment) fragmentClass.getConstructor().newInstance();
-        } else {
+        if (fragmentClass == null) {
           return new Fragment();
+        } else {
+          return (Fragment) fragmentClass.getConstructor().newInstance();
         }
       } catch (Exception exception) {
         return null;
