@@ -122,9 +122,9 @@ public class NetworkActivity extends Activity {
   }
 
   private static class TabSpec {
-    private int tabTextResourceId;
-    private int contentDescriptionResourceId;
-    private Class fragmentClass;
+    private final int tabTextResourceId;
+    private final int contentDescriptionResourceId;
+    private final Class fragmentClass;
 
     public TabSpec(int tabTextResourceId, int contentDescriptionResourceId,
         Class fragmentClass) {

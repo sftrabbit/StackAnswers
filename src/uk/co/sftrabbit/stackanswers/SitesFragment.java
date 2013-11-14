@@ -17,7 +17,7 @@ import java.lang.String;
 import java.util.ArrayList;
 
 public class SitesFragment extends ListFragment {
-  private ArrayList<Site> sites = new ArrayList<Site>() {{
+  private final ArrayList<Site> sites = new ArrayList<Site>() {{
     add(new Site("Stack Overflow",
       "Professional and enthusiast programmers", R.drawable.site_stackoverflow));
     add(new Site("Super User",
@@ -78,9 +78,9 @@ public class SitesFragment extends ListFragment {
   }
 
   private class SitesAdapter extends BaseAdapter {
-    private Context context;
-    private ArrayList<Site> sites;
-    private int itemLayoutResource;
+    private final Context context;
+    private final ArrayList<Site> sites;
+    private final int itemLayoutResource;
 
     public SitesAdapter(Context context, ArrayList<Site> sites,
         int itemLayoutResource) {
@@ -131,9 +131,9 @@ public class SitesFragment extends ListFragment {
   }
 
   private class Site {
-    private String name;
-    private String audience;
-    private int iconResource;
+    private final String name;
+    private final String audience;
+    private final int iconResource;
 
     public Site(String name, String audience, int iconResource) {
       this.name = name;

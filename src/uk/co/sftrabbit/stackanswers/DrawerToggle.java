@@ -7,7 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 public class DrawerToggle extends ActionBarDrawerToggle {
-  private DrawerLayout drawerLayout;
+  private final DrawerLayout drawerLayout;
 
   public DrawerToggle(Activity activity, DrawerLayout drawerLayout,
       int drawerImageRes, int openDrawerContentDescRes,
