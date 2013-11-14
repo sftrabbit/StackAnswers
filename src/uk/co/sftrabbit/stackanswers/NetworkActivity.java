@@ -207,6 +207,8 @@ public class NetworkActivity extends Activity {
     }
 
     public void onTabUnselected(ActionBar.Tab tab,
-        FragmentTransaction transaction) { }
+        FragmentTransaction transaction) {
+      // Do nothing
+    }
   }
 }
