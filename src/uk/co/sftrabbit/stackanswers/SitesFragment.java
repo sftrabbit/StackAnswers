@@ -13,25 +13,25 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
-import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SitesFragment extends ListFragment {
-  private final ArrayList<Site> sites = new ArrayList<Site>() {{
-    add(new Site("Stack Overflow",
-      "Professional and enthusiast programmers", R.drawable.site_stackoverflow));
-    add(new Site("Super User",
-      "Computer enthusiasts and power users", R.drawable.site_superuser));
-    add(new Site("Webmasters",
-      "Pro webmasters", R.drawable.site_webmasters));
-    add(new Site("Game Development",
-      "Professional and independent game developers", R.drawable.site_gamedevelopment));
-    add(new Site("Photography",
-      "Professional, enthusiast and amateur photographers", R.drawable.site_photography));
-    add(new Site("Mathematics", "People studying math at any" +
-      "level and professionals in related fields", R.drawable.site_mathematics));
-    add(new Site("Home Improvement",
-      "Contractors and serious DIYers", R.drawable.site_homeimprovement));
-  }};
+  private final List<Site> sites = Arrays.asList(new Site[] {
+    new Site("Stack Overflow", "Professional and enthusiast programmers",
+             R.drawable.site_stackoverflow),
+    new Site("Super User", "Computer enthusiasts and power users",
+             R.drawable.site_superuser),
+    new Site("Webmasters", "Pro webmasters",
+             R.drawable.site_webmasters),
+    new Site("Game Development", "Professional and independent game developers",
+             R.drawable.site_gamedevelopment),
+    new Site("Photography", "Professional, enthusiast and " +
+             "amateur photographers", R.drawable.site_photography),
+    new Site("Mathematics", "People studying math at any level and " +
+             "professionals in related fields", R.drawable.site_mathematics),
+    new Site("Home Improvement", "Contractors and serious DIYers",
+             R.drawable.site_homeimprovement)});
 
   private static final int LIST_PADDING_HORIZONTAL = 8;
   private static final int LIST_PADDING_VERTICAL = 8;
@@ -78,10 +78,10 @@ public class SitesFragment extends ListFragment {
 
   private class SitesAdapter extends BaseAdapter {
     private final Context context;
-    private final ArrayList<Site> sites;
+    private final List<Site> sites;
     private final int itemLayoutResource;
 
-    public SitesAdapter(Context context, ArrayList<Site> sites,
+    public SitesAdapter(Context context, List<Site> sites,
         int itemLayoutResource) {
       this.context = context;
       this.sites = sites;
