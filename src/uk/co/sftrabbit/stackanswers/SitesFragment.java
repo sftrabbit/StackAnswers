@@ -105,27 +105,28 @@ public class SitesFragment extends ListFragment {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+	    View itemView = convertView;
       final Site site = sites.get(position);
 
-      if (convertView == null) {
+      if (itemView == null) {
         final LayoutInflater inflater = (LayoutInflater)
           context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        convertView = inflater.inflate(itemLayoutResource, parent, false);
+        itemView = inflater.inflate(itemLayoutResource, parent, false);
       }
 
       final TextView nameView = (TextView)
-        convertView.findViewById(R.id.site_title);
+        itemView.findViewById(R.id.site_title);
       if (nameView != null) {
         nameView.setText(site.getName());
       }
 
       final ImageView iconView = (ImageView)
-        convertView.findViewById(R.id.site_image);
+        itemView.findViewById(R.id.site_image);
       if (iconView != null) {
         iconView.setImageResource(site.getIconResource());
       }
 
-      return convertView;
+      return itemView;
     }
   }
 
