@@ -1,63 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <style name="Theme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-    <item name="android:actionBarStyle">@style/Widget.ActionBar</item>
-    <item name="android:actionBarTabStyle">@style/Widget.ActionBar.TabView</item>
-    <item name="android:actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>
-    <item name="android:windowBackground">@color/application_background</item>
-    <item name="android:colorBackground">@color/application_background</item>
-  </style>
+	<style name="Theme" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+		<item name="android:actionBarStyle">@style/Widget.ActionBar</item>
+		<item name="android:actionBarTabStyle">@style/Widget.ActionBar.TabView</item>
+		<item name="android:actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>
+		<item name="android:windowBackground">@color/application_background</item>
+		<item name="android:colorBackground">@color/application_background</item>
+	</style>
   
-  <style name="Widget.ActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
-    <item name="android:icon">@drawable/icon_actionbar</item>
-    <item name="android:background">@color/actionbar_background</item>
-    <item name="android:backgroundStacked">@drawable/ab_stacked_solid</item>
-  </style>
+	<style
+			name="Widget.ActionBar"
+			parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+		<item name="android:icon">@drawable/icon_actionbar</item>
+		<item name="android:background">@color/actionbar_background</item>
+		<item name="android:backgroundStacked">@drawable/ab_stacked_solid</item>
+	</style>
 
-  <style name="Widget.ActionBar.TabView" parent="@android:style/Widget.Holo.ActionBar.TabView">
-    <item name="android:background">@drawable/tab_indicator_ab</item>
-  </style>
+	<style
+			name="Widget.ActionBar.TabView"
+			parent="@android:style/Widget.Holo.ActionBar.TabView">
+		<item name="android:background">@drawable/tab_indicator_ab</item>
+	</style>
 
-  <style name="Widget.ActionBar.TabText" parent="@android:style/Widget.Holo.ActionBar.TabText">
-    <item name="android:textColor">?android:attr/textColorSecondary</item>
-  </style>
+	<style
+			name="Widget.ActionBar.TabText"
+			parent="@android:style/Widget.Holo.ActionBar.TabText">
+		<item name="android:textColor">?android:attr/textColorSecondary</item>
+	</style>
 
-  <style name="Widget.Button.Dropdown"
-    parent="@android:style/Widget.Holo.Light.Button">
-    <item name="android:layout_width">32dp</item>
-    <item name="android:layout_height">match_parent</item>
-    <item name="android:paddingTop">0dp</item>
-    <item name="android:paddingBottom">0dp</item>
-    <item name="android:paddingLeft">16dp</item>
-    <item name="android:paddingRight">0dp</item>
-    <item name="android:background">?android:attr/selectableItemBackground</item>
-    <item name="android:src">@drawable/button_dropdown</item>
-    <item name="android:scaleType">fitEnd</item>
-  </style>
+	<style
+			name="Widget.Button.Dropdown"
+			parent="@android:style/Widget.Holo.Light.Button">
+		<item name="android:layout_width">32dp</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:paddingTop">0dp</item>
+		<item name="android:paddingBottom">0dp</item>
+		<item name="android:paddingLeft">16dp</item>
+		<item name="android:paddingRight">0dp</item>
+		<item name="android:background">
+			?android:attr/selectableItemBackground
+		</item>
+		<item name="android:src">@drawable/button_dropdown</item>
+		<item name="android:scaleType">fitEnd</item>
+	</style>
 
-  <style name="Widget.NavigationDrawer" parent="">
-    <item name="android:layout_width">@dimen/navigation_drawer_width</item>
-    <item name="android:layout_height">match_parent</item>
-    <item name="android:layout_gravity">start</item>
-    <item name="android:background">@color/navigation_drawer_background</item>
-  </style>
+	<style name="Widget.NavigationDrawer" parent="">
+		<item name="android:layout_width">@dimen/navigation_drawer_width</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_gravity">start</item>
+		<item name="android:background">@color/navigation_drawer_background</item>
+	</style>
 
-  <style name="Widget.NotificationDrawer" parent="">
-    <item name="android:layout_width">@dimen/notification_drawer_width</item>
-    <item name="android:layout_height">match_parent</item>
-    <item name="android:layout_gravity">end</item>
-    <item name="android:background">@color/navigation_drawer_background</item>
-  </style>
+	<style name="Widget.NotificationDrawer" parent="">
+		<item name="android:layout_width">@dimen/notification_drawer_width</item>
+		<item name="android:layout_height">match_parent</item>
+		<item name="android:layout_gravity">end</item>
+		<item name="android:background">@color/navigation_drawer_background</item>
+	</style>
 
-  <style name="Widget.Tag" parent="">
-    <item name="android:layout_width">wrap_content</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:paddingTop">4dp</item>
-    <item name="android:paddingBottom">4dp</item>
-    <item name="android:paddingLeft">8dp</item>
-    <item name="android:paddingRight">8dp</item>
-    <item name="android:background">@color/tag_background</item>
-    <item name="android:textColor">@color/tag_text</item>
-    <item name="android:textAppearance">@android:style/TextAppearance.Small</item>
-  </style>
+	<style name="Widget.Tag" parent="">
+		<item name="android:layout_width">wrap_content</item>
+		<item name="android:layout_height">wrap_content</item>
+		<item name="android:paddingTop">4dp</item>
+		<item name="android:paddingBottom">4dp</item>
+		<item name="android:paddingLeft">8dp</item>
+		<item name="android:paddingRight">8dp</item>
+		<item name="android:background">@color/tag_background</item>
+		<item name="android:textColor">@color/tag_text</item>
+		<item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+	</style>
 </resources>

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="uk.co.sftrabbit.stackanswers">
-  <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="14" />
+		package="uk.co.sftrabbit.stackanswers">
+	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="14" />
 
-  <application
-    android:label="@string/application_name"
-    android:icon="@drawable/icon_launcher"
-    android:logo="@drawable/icon_actionbar"
-    android:theme="@style/Theme"
-    android:allowBackup="true">
-    <activity android:name=".NetworkActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-    </activity>
-  </application>
+	<application
+			android:label="@string/application_name"
+			android:icon="@drawable/icon_launcher"
+			android:logo="@drawable/icon_actionbar"
+			android:theme="@style/Theme"
+			android:allowBackup="true">
+		<activity android:name=".NetworkActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
+	</application>
 </manifest>

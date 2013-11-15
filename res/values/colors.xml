@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="application_background">#e9e9e9</color>
-  <color name="actionbar_background">#2470bc</color>
-  <color name="navigation_drawer_background">#e9e9e9</color>
+	<color name="application_background">#e9e9e9</color>
+	<color name="actionbar_background">#2470bc</color>
+	<color name="navigation_drawer_background">#e9e9e9</color>
 
-  <color name="notifications_indicator">#333</color>
+	<color name="notifications_indicator">#333</color>
 
-  <color name="badge_gold">#fc0</color>
-  <color name="badge_silver">#c5c5c5</color>
-  <color name="badge_bronze">#c96</color>
+	<color name="badge_gold">#fc0</color>
+	<color name="badge_silver">#c5c5c5</color>
+	<color name="badge_bronze">#c96</color>
 
-  <color name="tag_background">#d3e2f2</color>
-  <color name="tag_text">#2470bc</color>
+	<color name="tag_background">#d3e2f2</color>
+	<color name="tag_text">#2470bc</color>
 </resources>

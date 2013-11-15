@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_height="wrap_content"
-  android:layout_width="wrap_content">
-  <ImageButton
-    android:id="@+id/button_notifications"
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:src="@drawable/shape_action_notifications"
-    style="@android:style/Widget.ActionButton" />
-  <TextView
-    android:layout_height="wrap_content"
-    android:layout_width="wrap_content"
-    android:layout_gravity="center"
-    android:textColor="@color/notifications_indicator"
-    android:text="19" />
+		android:layout_height="wrap_content"
+		android:layout_width="wrap_content">
+	<ImageButton
+			style="@android:style/Widget.ActionButton"
+			android:id="@+id/button_notifications"
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:src="@drawable/shape_action_notifications" />
+	<TextView
+			android:layout_height="wrap_content"
+			android:layout_width="wrap_content"
+			android:layout_gravity="center"
+			android:textColor="@color/notifications_indicator"
+			android:text="19" />
 </FrameLayout>
