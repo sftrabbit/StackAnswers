@@ -17,5 +17,13 @@
 				<category android:name="android.intent.category.LAUNCHER" />
 			</intent-filter>
 		</activity>
+		<activity
+				android:label="Settings"
+				android:name=".SettingsActivity"
+				android:parentActivityName="uk.co.sftrabbit.stackanswers.NetworkActivity">
+			<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value="uk.co.sftrabbit.stackanswers.NetworkActivity" />
+		</activity>
 	</application>
 </manifest>
