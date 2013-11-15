@@ -4,6 +4,11 @@
 		android:layout_height="wrap_content"
 		android:padding="16dp"
 		android:orientation="horizontal">
+	<ImageView
+			android:layout_width="24dp"
+			android:layout_height="24dp"
+			android:layout_marginRight="8dp"
+			android:src="@drawable/shape_navigation_placeholder" />
 	<TextView
 			android:id="@+id/item_name"
 			android:layout_width="match_parent"
