@@ -23,6 +23,7 @@ import java.util.Arrays;
 
 public class NetworkActivity extends Activity {
 	public static final String EXTRA_TAB = "NetworkActivityTab";
+	public static final int TAB_NONE = -1;
 	public static final int TAB_HOT = 0;
 	public static final int TAB_SITES = 1;
 
@@ -92,14 +93,12 @@ public class NetworkActivity extends Activity {
 
 	@Override
 	protected void onNewIntent(Intent intent) {
-		final int NO_TAB = -1;
-
 		setIntent(intent);
 
 		Bundle extras = intent.getExtras();
 		if (extras != null) {
-			int tabIndex = extras.getInt(EXTRA_TAB, NO_TAB);
-			if (tabIndex != NO_TAB) {
+			int tabIndex = extras.getInt(EXTRA_TAB, TAB_NONE);
+			if (tabIndex != TAB_NONE) {
 				actionBar.selectTab(actionBar.getTabAt(tabIndex));
 			}
 		}
