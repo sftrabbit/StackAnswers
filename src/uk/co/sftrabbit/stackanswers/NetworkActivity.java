@@ -92,11 +92,17 @@ public class NetworkActivity extends Activity {
 
 	@Override
 	protected void onNewIntent(Intent intent) {
+		final int NO_TAB = -1;
+
 		setIntent(intent);
 
 		Bundle extras = intent.getExtras();
-		int tabIndex = extras.getInt(EXTRA_TAB);
-		actionBar.selectTab(actionBar.getTabAt(tabIndex));
+		if (extras != null) {
+			int tabIndex = extras.getInt(EXTRA_TAB, NO_TAB);
+			if (tabIndex != NO_TAB) {
+				actionBar.selectTab(actionBar.getTabAt(tabIndex));
+			}
+		}
 	}
 
 	private void initTabPager() {
