@@ -9,7 +9,9 @@
 			android:logo="@drawable/icon_actionbar"
 			android:theme="@style/Theme"
 			android:allowBackup="true">
-		<activity android:name=".NetworkActivity">
+		<activity
+				android:name=".NetworkActivity"
+				android:launchMode="singleTop">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />

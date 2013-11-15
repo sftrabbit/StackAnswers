@@ -1,19 +1,26 @@
 package uk.co.sftrabbit.stackanswers.view;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
+import uk.co.sftrabbit.stackanswers.NetworkActivity;
 import uk.co.sftrabbit.stackanswers.R;
 
-public class NavigationDrawer extends LinearLayout {
+public class NavigationDrawer extends LinearLayout
+		implements AdapterView.OnItemClickListener {
+	private final Context context;
+	private final NavigationDrawerAdapter navigationAdapter;
+
 	public NavigationDrawer(Context context) {
 		this(context, null);
 	}
@@ -21,10 +28,20 @@ public class NavigationDrawer extends LinearLayout {
 	public NavigationDrawer(Context context, AttributeSet attrs) {
 		super(context, attrs);
 
-		List<String> itemList = Arrays.asList(
-			new String[] { "What's hot?", "Sites", "Sign in", "Notifications",
-			               "Settings" }
-		);
+		this.context = context;
+
+		Intent hotIntent = new Intent(context, NetworkActivity.class);
+		hotIntent.putExtra(NetworkActivity.EXTRA_TAB, NetworkActivity.TAB_HOT);
+
+		Intent sitesIntent = new Intent(context, NetworkActivity.class);
+		sitesIntent.putExtra(NetworkActivity.EXTRA_TAB, NetworkActivity.TAB_SITES);
+
+		final List<NavigationItem> items = Arrays.asList(new NavigationItem[] {
+			new NavigationItem("What's hot?", hotIntent),
+			new NavigationItem("Sites", sitesIntent),
+			new NavigationItem("Sign in", null),
+			new NavigationItem("Settings", null)
+		});
 
 		final ListView navigationListView = new ListView(context);
 
@@ -32,18 +49,31 @@ public class NavigationDrawer extends LinearLayout {
 			new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
 			                              ViewGroup.LayoutParams.MATCH_PARENT));
 
-		navigationListView.setAdapter(new NavigationDrawerAdapter(
-			context, itemList, R.layout.list_item_navigation));
+		navigationAdapter = new NavigationDrawerAdapter(context, items,
+			R.layout.list_item_navigation);
+		navigationListView.setAdapter(navigationAdapter);
+
+		navigationListView.setOnItemClickListener(this);
 
 		addView(navigationListView);
 	}
 
+	@Override
+	public void onItemClick(AdapterView<?> parent, View view, int position,
+	                        long id) {
+		NavigationItem item = navigationAdapter.getItem(position);
+		Intent itemIntent = item.getIntent();
+		if (itemIntent != null) {
+			context.startActivity(itemIntent);
+		}
+	}
+
 	private class NavigationDrawerAdapter extends BaseAdapter {
 		private final Context context;
-		private final List<String> items;
+		private final List<NavigationItem> items;
 		private final int itemLayoutResource;
 
-		public NavigationDrawerAdapter(Context context, List<String> items,
+		public NavigationDrawerAdapter(Context context, List<NavigationItem> items,
 				int itemLayoutResource) {
 			this.context = context;
 			this.items = items;
@@ -56,7 +86,7 @@ public class NavigationDrawer extends LinearLayout {
 		}
 
 		@Override
-		public String getItem(int position) {
+		public NavigationItem getItem(int position) {
 			return items.get(position);
 		}
 
@@ -68,7 +98,7 @@ public class NavigationDrawer extends LinearLayout {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			View itemView = convertView;
-			final String item = items.get(position);
+			final NavigationItem item = items.get(position);
 
 			if (itemView == null) {
 				final LayoutInflater inflater = (LayoutInflater)
@@ -79,10 +109,28 @@ public class NavigationDrawer extends LinearLayout {
 			final TextView nameView = (TextView)
 				itemView.findViewById(R.id.item_name);
 			if (nameView != null) {
-				nameView.setText(item);
+				nameView.setText(item.getName());
 			}
 
 			return itemView;
+		}
+	}
+
+	private class NavigationItem {
+		private final String name;
+		private final Intent intent;
+
+		NavigationItem(String name, Intent intent) {
+			this.name = name;
+			this.intent = intent;
+		}
+
+		String getName() {
+			return name;
+		}
+
+		Intent getIntent() {
+			return intent;
 		}
 	}
 }

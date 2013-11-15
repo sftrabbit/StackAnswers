@@ -5,6 +5,7 @@ import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -21,6 +22,10 @@ import java.util.Collections;
 import java.util.Arrays;
 
 public class NetworkActivity extends Activity {
+	public static final String EXTRA_TAB = "NetworkActivityTab";
+	public static final int TAB_HOT = 0;
+	public static final int TAB_SITES = 1;
+
 	private ActionBar actionBar;
 	private ViewPager tabPager;
 	private DrawerLayout drawerLayout;
@@ -83,6 +88,15 @@ public class NetworkActivity extends Activity {
 	protected void onPostCreate(Bundle savedInstanceState) {
 		super.onPostCreate(savedInstanceState);
 		drawerToggle.syncState();
+	}
+
+	@Override
+	protected void onNewIntent(Intent intent) {
+		setIntent(intent);
+
+		Bundle extras = intent.getExtras();
+		int tabIndex = extras.getInt(EXTRA_TAB);
+		actionBar.selectTab(actionBar.getTabAt(tabIndex));
 	}
 
 	private void initTabPager() {
