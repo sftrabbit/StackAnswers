@@ -19,19 +19,19 @@ import java.util.List;
 public class SitesFragment extends ListFragment {
 	private final List<Site> sites = Arrays.asList(new Site[] {
 		new Site("Stack Overflow", "Professional and enthusiast programmers",
-		         R.drawable.site_stackoverflow),
+		         0),
 		new Site("Super User", "Computer enthusiasts and power users",
-		         R.drawable.site_superuser),
+		         0),
 		new Site("Webmasters", "Pro webmasters",
-		         R.drawable.site_webmasters),
+		         0),
 		new Site("Game Development", "Professional and independent game developers",
-		         R.drawable.site_gamedevelopment),
+		         0),
 		new Site("Photography", "Professional, enthusiast and " +
-		         "amateur photographers", R.drawable.site_photography),
+		         "amateur photographers", 0),
 		new Site("Mathematics", "People studying math at any level and " +
-		         "professionals in related fields", R.drawable.site_mathematics),
+		         "professionals in related fields", 0),
 		new Site("Home Improvement", "Contractors and serious DIYers",
-		         R.drawable.site_homeimprovement)});
+		         0)});
 
 	private static final int LIST_PADDING_HORIZONTAL = 8;
 	private static final int LIST_PADDING_VERTICAL = 8;
