@@ -9,12 +9,14 @@ public class SettingsActivity extends Activity {
 		protected void onCreate(Bundle savedInstanceState) {
 			super.onCreate(savedInstanceState);
 
+			setContentView(R.layout.activity_settings);
+
 			ActionBar actionBar = getActionBar();
 			assert actionBar != null : "No action bar in activity";
 			actionBar.setDisplayHomeAsUpEnabled(true);
 
 			getFragmentManager().beginTransaction()
-				.add(android.R.id.content, new SettingsFragment())
+				.add(R.id.settings_content, new SettingsFragment())
 				.commit();
 		}
 }
