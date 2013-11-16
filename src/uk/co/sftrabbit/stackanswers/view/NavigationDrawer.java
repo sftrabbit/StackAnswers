@@ -2,6 +2,7 @@ package uk.co.sftrabbit.stackanswers.view;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.widget.DrawerLayout;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,9 +19,11 @@ import uk.co.sftrabbit.stackanswers.SettingsActivity;
 import uk.co.sftrabbit.stackanswers.R;
 
 public class NavigationDrawer extends LinearLayout
-		implements AdapterView.OnItemClickListener {
+		implements AdapterView.OnItemClickListener, DrawerLayout.DrawerListener {
 	private final Context context;
 	private final NavigationDrawerAdapter navigationAdapter;
+	private DrawerLayout drawerLayout;
+	private Intent clickedItemIntent;
 
 	public NavigationDrawer(Context context) {
 		this(context, null);
@@ -61,13 +64,47 @@ public class NavigationDrawer extends LinearLayout
 	}
 
 	@Override
+	public void onAttachedToWindow() {
+		super.onAttachedToWindow();
+
+		final View rootView = getRootView();
+		drawerLayout = (DrawerLayout) rootView.findViewById(R.id.drawer_layout);
+		drawerLayout.setDrawerListener(this);
+	}
+
+	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 	                        long id) {
+		drawerLayout.closeDrawers();
+
 		NavigationItem item = navigationAdapter.getItem(position);
 		Intent itemIntent = item.getIntent();
 		if (itemIntent != null) {
-			context.startActivity(itemIntent);
+			clickedItemIntent = itemIntent;
 		}
+	}
+
+	@Override
+	public void onDrawerClosed(View drawerView) {
+		if (clickedItemIntent != null) {
+			context.startActivity(clickedItemIntent);
+			clickedItemIntent = null;
+		}
+	}
+
+	@Override
+	public void onDrawerOpened(View drawerView) {
+		// Do nothing
+	}
+
+	@Override
+	public void onDrawerSlide(View drawerView, float slideOffset) {
+		// Do nothing
+	}
+
+	@Override
+	public void onDrawerStateChanged(int newState) {
+		// Do nothing
 	}
 
 	private class NavigationDrawerAdapter extends BaseAdapter {
