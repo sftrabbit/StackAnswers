@@ -1,27 +1,24 @@
 package uk.co.sftrabbit.stackanswers;
 
-import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
-import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v13.app.FragmentPagerAdapter;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 import java.util.List;
 import java.util.Collections;
 import java.util.Arrays;
+import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
 
-public class NetworkActivity extends Activity {
+public class NetworkActivity extends DrawerActivity {
 	public static final String EXTRA_TAB = "NetworkActivityTab";
 	public static final int TAB_NONE = -1;
 	public static final int TAB_HOT = 0;
@@ -29,8 +26,6 @@ public class NetworkActivity extends Activity {
 
 	private ActionBar actionBar;
 	private ViewPager tabPager;
-	private DrawerLayout drawerLayout;
-	private DrawerToggle drawerToggle;
 
 	//TODO - give content descriptions for accessibility
 	private static final List<TabSpec> TAB_SPECS =
@@ -49,14 +44,7 @@ public class NetworkActivity extends Activity {
 		assert actionBar != null : "No action bar in activity";
 
 		initTabPager();
-		initNavigationDrawer();
 		initTabs();
-	}
-
-	@Override
-	public void onConfigurationChanged(Configuration newConfig) {
-		super.onConfigurationChanged(newConfig);
-		drawerToggle.onConfigurationChanged(newConfig);
 	}
 
 	@Override
@@ -67,15 +55,6 @@ public class NetworkActivity extends Activity {
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		if (drawerToggle.onOptionsItemSelected(item)) {
-			return false;
-		}
-
-		return super.onOptionsItemSelected(item);
-	}
-
 	public void onDropdownClick(View v) {
 		//TODO - Inflate this menu instead of hardcoding it
 		final PopupMenu popupMenu = new PopupMenu(this, v);
@@ -83,12 +62,6 @@ public class NetworkActivity extends Activity {
 		menu.add("Meta Site");
 		menu.add("Open in Browser");
 		popupMenu.show();
-	}
-
-	@Override
-	protected void onPostCreate(Bundle savedInstanceState) {
-		super.onPostCreate(savedInstanceState);
-		drawerToggle.syncState();
 	}
 
 	@Override
@@ -112,20 +85,6 @@ public class NetworkActivity extends Activity {
 		tabPager.setOnPageChangeListener(new TabPagerListener(actionBar));
 	}
 
-	private void initNavigationDrawer() {
-		actionBar.setDisplayHomeAsUpEnabled(true);
-
-		drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-		assert drawerLayout != null : "No navigation drawer in activity";
-
-		drawerLayout.setDrawerShadow(R.drawable.drawer_shadow_left, Gravity.START);
-		drawerLayout.setDrawerShadow(R.drawable.drawer_shadow_right, Gravity.END);
-		drawerToggle = new DrawerToggle(this, drawerLayout,
-			R.drawable.icon_drawer, R.string.action_open_navigation_drawer,
-			R.string.action_close_navigation_drawer);
-		drawerLayout.setDrawerListener(drawerToggle);
-	}
-
 	private void initTabs() {
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
@@ -136,7 +95,7 @@ public class NetworkActivity extends Activity {
 
 	private void addTab(TabSpec tabSpec) {
 		final ActionBar.Tab tab = actionBar.newTab();
-		tab.setTabListener(new TabListener(tabPager, drawerLayout));
+		tab.setTabListener(new TabListener(tabPager, getDrawerLayout()));
 		actionBar.addTab(tabSpec.applyTo(tab));
 	}
 

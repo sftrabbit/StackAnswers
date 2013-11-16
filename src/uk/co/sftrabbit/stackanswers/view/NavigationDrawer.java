@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
+import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
 import uk.co.sftrabbit.stackanswers.NetworkActivity;
 import uk.co.sftrabbit.stackanswers.SettingsActivity;
 import uk.co.sftrabbit.stackanswers.R;
@@ -63,13 +64,8 @@ public class NavigationDrawer extends LinearLayout
 		addView(navigationListView);
 	}
 
-	@Override
-	public void onAttachedToWindow() {
-		super.onAttachedToWindow();
-
-		final View rootView = getRootView();
-		drawerLayout = (DrawerLayout) rootView.findViewById(R.id.drawer_layout);
-		drawerLayout.setDrawerListener(this);
+	public void setDrawerLayout(DrawerLayout drawerLayout) {
+		this.drawerLayout = drawerLayout;
 	}
 
 	@Override
@@ -81,6 +77,10 @@ public class NavigationDrawer extends LinearLayout
 		Intent itemIntent = item.getIntent();
 		if (itemIntent != null) {
 			clickedItemIntent = itemIntent;
+
+			DrawerActivity drawerActivity =
+				(DrawerActivity) context;
+			drawerActivity.setTouchEnabled(false);
 		}
 	}
 
@@ -89,6 +89,10 @@ public class NavigationDrawer extends LinearLayout
 		if (clickedItemIntent != null) {
 			context.startActivity(clickedItemIntent);
 			clickedItemIntent = null;
+
+			DrawerActivity drawerActivity =
+				(DrawerActivity) context;
+			drawerActivity.setTouchEnabled(true);
 		}
 	}
 

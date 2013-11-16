@@ -1,22 +1,19 @@
 package uk.co.sftrabbit.stackanswers;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.os.Bundle;
+import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
 
-public class SettingsActivity extends Activity {
+public class SettingsActivity extends DrawerActivity {
 	@Override
-		protected void onCreate(Bundle savedInstanceState) {
-			super.onCreate(savedInstanceState);
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-			setContentView(R.layout.activity_settings);
+		setContentView(R.layout.activity_settings);
 
-			ActionBar actionBar = getActionBar();
-			assert actionBar != null : "No action bar in activity";
-			actionBar.setDisplayHomeAsUpEnabled(true);
+		setDrawerIndicatorEnabled(false);
 
-			getFragmentManager().beginTransaction()
-				.add(R.id.settings_content, new SettingsFragment())
-				.commit();
-		}
+		getFragmentManager().beginTransaction()
+			.add(R.id.settings_content, new SettingsFragment())
+			.commit();
+	}
 }
