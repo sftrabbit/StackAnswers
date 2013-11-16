@@ -6,7 +6,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.view.MenuItem;
 import android.view.View;
 import uk.co.sftrabbit.stackanswers.R;
-import android.util.Log;
 
 public class DrawerToggle extends ActionBarDrawerToggle {
 	private final DrawerLayout drawerLayout;

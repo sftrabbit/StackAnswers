@@ -12,7 +12,6 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.util.Log;
 import uk.co.sftrabbit.stackanswers.R;
 import uk.co.sftrabbit.stackanswers.view.NavigationDrawer;
 
