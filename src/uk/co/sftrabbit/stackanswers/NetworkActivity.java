@@ -45,6 +45,8 @@ public class NetworkActivity extends DrawerActivity {
 
 		initTabPager();
 		initTabs();
+
+		selectRequestedTab();
 	}
 
 	@Override
@@ -67,14 +69,7 @@ public class NetworkActivity extends DrawerActivity {
 	@Override
 	protected void onNewIntent(Intent intent) {
 		setIntent(intent);
-
-		Bundle extras = intent.getExtras();
-		if (extras != null) {
-			int tabIndex = extras.getInt(EXTRA_TAB, TAB_NONE);
-			if (tabIndex != TAB_NONE) {
-				actionBar.selectTab(actionBar.getTabAt(tabIndex));
-			}
-		}
+		selectRequestedTab();
 	}
 
 	private void initTabPager() {
@@ -97,6 +92,17 @@ public class NetworkActivity extends DrawerActivity {
 		final ActionBar.Tab tab = actionBar.newTab();
 		tab.setTabListener(new TabListener(tabPager, getDrawerLayout()));
 		actionBar.addTab(tabSpec.applyTo(tab));
+	}
+
+	private void selectRequestedTab() {
+		Intent intent = getIntent();
+		Bundle extras = intent.getExtras();
+		if (extras != null) {
+			int tabIndex = extras.getInt(EXTRA_TAB, TAB_NONE);
+			if (tabIndex != TAB_NONE) {
+				actionBar.selectTab(actionBar.getTabAt(tabIndex));
+			}
+		}
 	}
 
 	private static class TabSpec {
