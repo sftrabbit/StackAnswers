@@ -17,6 +17,8 @@ import uk.co.sftrabbit.stackanswers.view.NavigationDrawer;
 
 public class DrawerActivity extends Activity
 		implements DrawerLayout.DrawerListener {
+	private ActionBar actionBar;
+	private CharSequence title;
 	private DrawerLayout drawerLayout;
 	private NavigationDrawer navigationDrawer;
 	private DrawerToggle drawerToggle;
@@ -27,6 +29,11 @@ public class DrawerActivity extends Activity
 		super.onCreate(savedInstanceState);
 
 		super.setContentView(R.layout.navigation_drawer);
+
+		actionBar = getActionBar();
+		assert actionBar != null : "No action bar in activity";
+
+		title = getTitle();
 
 		initNavigationDrawer();
 	}
@@ -71,12 +78,20 @@ public class DrawerActivity extends Activity
 	public void onDrawerClosed(View drawerView) {
 		drawerToggle.onDrawerClosed(drawerView);
 		navigationDrawer.onDrawerClosed(drawerView);
+
+		if (drawerView.getId() == R.id.navigation_drawer) {
+			actionBar.setTitle(title);
+		}
 	}
 
 	@Override
 	public void onDrawerOpened(View drawerView) {
 		drawerToggle.onDrawerOpened(drawerView);
 		navigationDrawer.onDrawerOpened(drawerView);
+
+		if (drawerView.getId() == R.id.navigation_drawer) {
+			actionBar.setTitle(R.string.application_name);
+		}
 	}
 
 	@Override
