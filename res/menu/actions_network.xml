@@ -11,7 +11,7 @@
 			android:id="@+id/action_notifications"
 			android:title="@string/action_notifications_open"
 			android:titleCondensed="@string/action_notifications_condensed"
-			android:showAsAction="ifRoom"
+			android:showAsAction="always"
 			android:actionViewClass="uk.co.sftrabbit.stackanswers.view.NotificationsActionView" />
 	<item
 			android:id="@+id/action_settings"
