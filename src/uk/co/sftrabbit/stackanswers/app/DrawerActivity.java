@@ -8,10 +8,13 @@ import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import java.util.ArrayList;
 import uk.co.sftrabbit.stackanswers.R;
 import uk.co.sftrabbit.stackanswers.view.NavigationDrawer;
 
@@ -22,6 +25,7 @@ public class DrawerActivity extends Activity
 	private DrawerLayout drawerLayout;
 	private NavigationDrawer navigationDrawer;
 	private DrawerToggle drawerToggle;
+	private ArrayList<MenuItem> activityMenuItems = new ArrayList<MenuItem>();
 	private boolean isTouchEnabled = true;
 
 	@Override
@@ -75,6 +79,29 @@ public class DrawerActivity extends Activity
 	}
 
 	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		for (int index = 0; index < menu.size(); index++) {
+			activityMenuItems.add(menu.getItem(index));
+		}
+		final MenuInflater inflater = getMenuInflater();
+		inflater.inflate(R.menu.actions_application, menu);
+
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		boolean drawerOpen = drawerLayout.isDrawerOpen(navigationDrawer);
+		for (int index = 0; index < menu.size(); index++) {
+			MenuItem menuItem = menu.getItem(index);
+			if (activityMenuItems.contains(menuItem)) {
+				menuItem.setVisible(!drawerOpen);
+			}
+		}
+		return super.onPrepareOptionsMenu(menu);
+	}
+
+	@Override
 	public void onDrawerClosed(View drawerView) {
 		drawerToggle.onDrawerClosed(drawerView);
 		navigationDrawer.onDrawerClosed(drawerView);
@@ -82,6 +109,8 @@ public class DrawerActivity extends Activity
 		if (drawerView.getId() == R.id.navigation_drawer) {
 			actionBar.setTitle(title);
 		}
+
+		invalidateOptionsMenu();
 	}
 
 	@Override
@@ -92,6 +121,8 @@ public class DrawerActivity extends Activity
 		if (drawerView.getId() == R.id.navigation_drawer) {
 			actionBar.setTitle(R.string.application_name);
 		}
+
+		invalidateOptionsMenu();
 	}
 
 	@Override

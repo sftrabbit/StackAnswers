@@ -7,18 +7,4 @@
 			android:icon="@drawable/icon_action_search"
 			android:showAsAction="ifRoom|collapseActionView"
 			android:actionViewClass="android.widget.SearchView" />
-	<item
-			android:id="@+id/action_notifications"
-			android:title="@string/action_notifications_open"
-			android:titleCondensed="@string/action_notifications_condensed"
-			android:showAsAction="always"
-			android:actionViewClass="uk.co.sftrabbit.stackanswers.view.NotificationsActionView" />
-	<item
-			android:id="@+id/action_settings"
-			android:title="@string/action_settings"
-			android:showAsAction="never" />
-	<item
-			android:id="@+id/action_help"
-			android:title="@string/action_help"
-			android:showAsAction="never" />
 </menu>
