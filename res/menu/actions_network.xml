@@ -17,5 +17,8 @@
 			android:id="@+id/action_settings"
 			android:title="@string/action_settings"
 			android:showAsAction="never" />
+	<item
+			android:id="@+id/action_help"
+			android:title="@string/action_help"
+			android:showAsAction="never" />
 </menu>
-
