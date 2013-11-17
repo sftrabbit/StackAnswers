@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 		package="uk.co.sftrabbit.stackanswers">
 	<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19" />
+	<uses-permission android:name="android.permission.INTERNET" />
 
 	<application
 			android:label="@string/application_name"
@@ -21,6 +22,14 @@
 				android:label="Settings"
 				android:name=".SettingsActivity"
 				android:parentActivityName="uk.co.sftrabbit.stackanswers.NetworkActivity">
+			<meta-data
+					android:name="android.support.PARENT_ACTIVITY"
+					android:value="uk.co.sftrabbit.stackanswers.NetworkActivity" />
+		</activity>
+		<activity
+				android:label="Sign in"
+				android:name=".AuthenticationActivity"
+				android:parentActivityName="uk.co.sftrabbit.stackanswers.AuthenticationActivity">
 			<meta-data
 					android:name="android.support.PARENT_ACTIVITY"
 					android:value="uk.co.sftrabbit.stackanswers.NetworkActivity" />

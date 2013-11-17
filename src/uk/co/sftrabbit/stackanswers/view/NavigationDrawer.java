@@ -15,6 +15,7 @@ import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
 import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
+import uk.co.sftrabbit.stackanswers.AuthenticationActivity;
 import uk.co.sftrabbit.stackanswers.NetworkActivity;
 import uk.co.sftrabbit.stackanswers.SettingsActivity;
 import uk.co.sftrabbit.stackanswers.R;
@@ -44,7 +45,8 @@ public class NavigationDrawer extends LinearLayout
 		final List<NavigationItem> items = Arrays.asList(new NavigationItem[] {
 			new NavigationItem("What's hot?", hotIntent),
 			new NavigationItem("Sites", sitesIntent),
-			new NavigationItem("Sign in", null),
+			new NavigationItem("Sign in", new Intent(context,
+			                                         AuthenticationActivity.class)),
 			new NavigationItem("Settings", new Intent(context,
 			                                          SettingsActivity.class))
 		});
