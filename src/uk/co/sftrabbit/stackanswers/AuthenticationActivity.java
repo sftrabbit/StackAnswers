@@ -1,6 +1,7 @@
 package uk.co.sftrabbit.stackanswers;
 
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -25,7 +26,12 @@ public class AuthenticationActivity extends DrawerActivity {
 		webView.setWebChromeClient(new WebChromeClient() {
 			@Override
 			public void onProgressChanged(WebView webview, int newProgress) {
-				progressBar.setProgress(newProgress);
+				if (newProgress < 100) {
+					progressBar.setProgress(newProgress);
+					progressBar.setVisibility(View.VISIBLE);
+				} else {
+					progressBar.setVisibility(View.GONE);
+				}
 			}
 		});
 
