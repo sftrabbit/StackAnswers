@@ -30,8 +30,8 @@ public class NetworkActivity extends DrawerActivity {
 	//TODO - give content descriptions for accessibility
 	private static final List<TabSpec> TAB_SPECS =
 		Collections.unmodifiableList(Arrays.asList(
-			new TabSpec(R.string.tab_hot, 0, null),
-			new TabSpec(R.string.tab_sites, 0, SitesFragment.class)
+			new TabSpec(R.string.page_hot, 0, null),
+			new TabSpec(R.string.page_sites, 0, SitesFragment.class)
 		));
 
 	@Override

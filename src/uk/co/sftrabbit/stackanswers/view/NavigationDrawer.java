@@ -43,12 +43,12 @@ public class NavigationDrawer extends LinearLayout
 		sitesIntent.putExtra(NetworkActivity.EXTRA_TAB, NetworkActivity.TAB_SITES);
 
 		final List<NavigationItem> items = Arrays.asList(new NavigationItem[] {
-			new NavigationItem("What's hot?", hotIntent),
-			new NavigationItem("Sites", sitesIntent),
-			new NavigationItem("Sign in", new Intent(context,
-			                                         AuthenticationActivity.class)),
-			new NavigationItem("Settings", new Intent(context,
-			                                          SettingsActivity.class))
+			new NavigationItem(R.string.page_hot, hotIntent),
+			new NavigationItem(R.string.page_sites, sitesIntent),
+			new NavigationItem(R.string.page_authenticate,
+			                   new Intent(context, AuthenticationActivity.class)),
+			new NavigationItem(R.string.page_settings,
+			                   new Intent(context, SettingsActivity.class))
 		});
 
 		final ListView navigationListView = new ListView(context);
@@ -154,7 +154,7 @@ public class NavigationDrawer extends LinearLayout
 			final TextView nameView = (TextView)
 				itemView.findViewById(R.id.item_name);
 			if (nameView != null) {
-				nameView.setText(item.getName());
+				nameView.setText(item.getNameResource());
 			}
 
 			return itemView;
@@ -162,16 +162,16 @@ public class NavigationDrawer extends LinearLayout
 	}
 
 	private class NavigationItem {
-		private final String name;
+		private final int nameResource;
 		private final Intent intent;
 
-		NavigationItem(String name, Intent intent) {
-			this.name = name;
+		NavigationItem(int nameResource, Intent intent) {
+			this.nameResource = nameResource;
 			this.intent = intent;
 		}
 
-		String getName() {
-			return name;
+		int getNameResource() {
+			return nameResource;
 		}
 
 		Intent getIntent() {
