@@ -69,4 +69,12 @@
 		<item name="android:textColor">@color/tag_text</item>
 		<item name="android:textAppearance">@android:style/TextAppearance.Small</item>
 	</style>
+
+	<style
+			name="Widget.ProgressBar.Horizontal.Slim"
+			parent="@android:style/Widget.ProgressBar.Horizontal">
+		<item name="android:progressDrawable">@drawable/progress_horizontal_slim</item>
+		<item name="android:minHeight">4dp</item>
+		<item name="android:maxHeight">4dp</item>
+	</style>
 </resources>
