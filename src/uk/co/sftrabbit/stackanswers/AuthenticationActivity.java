@@ -7,8 +7,6 @@ import android.view.View;
 import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
 
 public class AuthenticationActivity extends DrawerActivity {
-	private FragmentManager fragmentManager;
-
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -16,17 +14,6 @@ public class AuthenticationActivity extends DrawerActivity {
 		setContentView(R.layout.activity_authentication);
 
 		setDrawerIndicatorEnabled(false);
-
-		fragmentManager = getFragmentManager();
-
-		Fragment authInfoFragment =
-			fragmentManager.findFragmentByTag(AuthInfoFragment.class.getName());
-		if (authInfoFragment == null) {
-			getFragmentManager().beginTransaction()
-				.add(R.id.authentication_content, new AuthInfoFragment(),
-				     AuthInfoFragment.class.getName())
-				.commit();
-		}
 	}
 
 	public void showAuthenticationPage(View view) {
