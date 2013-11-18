@@ -19,7 +19,7 @@
 			</intent-filter>
 		</activity>
 		<activity
-				android:label="Settings"
+				android:label="@string/page_settings"
 				android:name=".SettingsActivity"
 				android:parentActivityName="uk.co.sftrabbit.stackanswers.NetworkActivity">
 			<meta-data
@@ -27,7 +27,7 @@
 					android:value="uk.co.sftrabbit.stackanswers.NetworkActivity" />
 		</activity>
 		<activity
-				android:label="Sign in"
+				android:label="@string/page_authenticate"
 				android:name=".AuthenticationActivity"
 				android:parentActivityName="uk.co.sftrabbit.stackanswers.AuthenticationActivity">
 			<meta-data

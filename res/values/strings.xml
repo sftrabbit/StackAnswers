@@ -18,7 +18,7 @@
 	<string name="action_close_navigation_drawer">Close navigation</string>
 
 	<string name="message_auth_info">
-		You will be directed to the Stack Exchange authentication page to sign in.
+		You will be presented with the Stack Exchange authentication page to log in.
 	</string>
 	<string name="message_credentials">
 		Your Stack Exchange credentials will not be stored.
