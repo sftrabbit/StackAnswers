@@ -11,9 +11,5 @@ public class SettingsActivity extends DrawerActivity {
 		setContentView(R.layout.activity_settings);
 
 		setDrawerIndicatorEnabled(false);
-
-		getFragmentManager().beginTransaction()
-			.add(R.id.settings_content, new SettingsFragment())
-			.commit();
 	}
 }
