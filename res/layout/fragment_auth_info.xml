@@ -8,13 +8,13 @@
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:text="You will be directed to the Stack Exchange authentication page to sign in and allow Stack Answers to act on your behalf."
+		android:text="@string/message_auth_info"
 		android:textAppearance="?android:attr/textAppearanceMedium"/>
 	<TextView
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_marginTop="8dp"
-		android:text="Your Stack Exchange credentials will not be stored"
+		android:text="@string/message_credentials"
 		android:textAppearance="?android:attr/textAppearanceMedium"
 		android:textStyle="bold" />
 	<Button
