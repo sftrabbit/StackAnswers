@@ -21,7 +21,9 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:background="@drawable/background_card"
@@ -68,17 +70,20 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 					android:layout_marginEnd="8dp"
 					android:layout_marginRight="8dp"
 					android:text="c++"
-					android:textIsSelectable="false" />
+					android:textIsSelectable="false"
+					tools:ignore="HardcodedText" />
 			<TextView
 					style="@style/Widget.Tag"
 					android:layout_marginEnd="8dp"
 					android:layout_marginRight="8dp"
 					android:text="python"
-					android:textIsSelectable="false" />
+					android:textIsSelectable="false"
+					tools:ignore="HardcodedText" />
 			<TextView
 					style="@style/Widget.Tag"
 					android:text="opengl"
-					android:textIsSelectable="false" />
+					android:textIsSelectable="false"
+					tools:ignore="HardcodedText" />
 		</LinearLayout>
 	</RelativeLayout>
 	<LinearLayout
@@ -102,8 +107,9 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_marginEnd="4dp"
 				android:layout_marginRight="4dp"
 				android:textStyle="bold"
-				android:text="38,720" 
-				android:textIsSelectable="false" />
+				android:text="38,720"
+				android:textIsSelectable="false"
+				tools:ignore="HardcodedText" />
 		<ImageView
 				android:layout_width="10dp"
 				android:layout_height="10dp"
@@ -113,7 +119,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="3"
-				android:textIsSelectable="false" />
+				android:textIsSelectable="false"
+				tools:ignore="HardcodedText" />
 		<ImageView
 				android:layout_width="10dp"
 				android:layout_height="10dp"
@@ -123,7 +130,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="39"
-				android:textIsSelectable="false" />
+				android:textIsSelectable="false"
+				tools:ignore="HardcodedText" />
 		<ImageView
 				android:layout_width="10dp"
 				android:layout_height="10dp"
@@ -133,6 +141,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="116"
-				android:textIsSelectable="false" />
+				android:textIsSelectable="false"
+				tools:ignore="HardcodedText" />
 	</LinearLayout>
 </LinearLayout>

@@ -21,7 +21,9 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:tools="http://schemas.android.com/tools"
 		android:layout_height="wrap_content"
 		android:layout_width="wrap_content">
 	<ImageButton
@@ -35,5 +37,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			android:layout_width="wrap_content"
 			android:layout_gravity="center"
 			android:textColor="@color/notifications_indicator"
-			android:text="19" />
+			android:text="19"
+			tools:ignore="HardcodedText" />
 </FrameLayout>
