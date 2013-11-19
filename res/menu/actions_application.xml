@@ -23,17 +23,14 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
-			android:id="@+id/action_notifications"
 			android:title="@string/action_notifications_open"
 			android:titleCondensed="@string/action_notifications_condensed"
 			android:showAsAction="always"
 			android:actionViewClass="uk.co.sftrabbit.stackanswers.view.NotificationsActionView" />
 	<item
-			android:id="@+id/action_settings"
 			android:title="@string/action_settings"
 			android:showAsAction="never" />
 	<item
-			android:id="@+id/action_help"
 			android:title="@string/action_help"
 			android:showAsAction="never" />
 </menu>

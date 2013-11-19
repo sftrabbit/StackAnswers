@@ -23,7 +23,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 	<item
-			android:id="@+id/action_search"
 			android:title="@string/action_search_sites"
 			android:titleCondensed="@string/action_search_sites_condensed"
 			android:icon="@drawable/icon_action_search"
