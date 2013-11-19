@@ -27,6 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		android:layout_height="wrap_content"
 		android:padding="16dp"
 		android:textAppearance="@android:style/TextAppearance.Medium"
+		android:textIsSelectable="false"
 		android:drawablePadding="8dp"
 		android:drawableStart="@drawable/shape_navigation_placeholder"
 		android:drawableLeft="@drawable/shape_navigation_placeholder" />
