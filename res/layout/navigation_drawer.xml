@@ -27,7 +27,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		android:layout_width="match_parent"
 		android:layout_height="match_parent">
 	<FrameLayout
-			android:id="@+id/drawer_activity_content"
+			android:id="@+id/activity_content"
 			android:layout_width="match_parent"
 			android:layout_height="match_parent" />
 	<uk.co.sftrabbit.stackanswers.view.NavigationDrawer

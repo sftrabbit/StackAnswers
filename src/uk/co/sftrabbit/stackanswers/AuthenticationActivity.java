@@ -40,7 +40,7 @@ public class AuthenticationActivity extends DrawerActivity {
 	public void showAuthenticationPage(View view) {
 		getFragmentManager().beginTransaction()
 			.setCustomAnimations(R.animator.fragment_open_enter, 0)
-			.replace(R.id.authentication_content, new AuthFragment())
+			.replace(R.id.activity_content, new AuthFragment())
 			.addToBackStack(null)
 			.commit();
 	}

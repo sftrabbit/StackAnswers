@@ -74,8 +74,8 @@ public abstract class DrawerActivity extends Activity
 		assert layoutInflater != null : "LAYOUT_INFLATER_SERVICE not found";
 
 		ViewGroup contentFrame =
-			(ViewGroup) findViewById(R.id.drawer_activity_content);
-		assert contentFrame != null : "No drawer_activity_content in layout";
+			(ViewGroup) findViewById(R.id.activity_content);
+		assert contentFrame != null : "No activity_content in layout";
 
 		layoutInflater.inflate(layoutResId, contentFrame);
 	}
