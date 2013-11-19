@@ -23,8 +23,6 @@
  
 package uk.co.sftrabbit.stackanswers;
 
-import android.app.Fragment;
-import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
 import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
