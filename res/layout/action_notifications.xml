@@ -31,7 +31,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			android:id="@+id/button_notifications"
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
-			android:src="@drawable/shape_action_notifications" />
+			android:src="@drawable/shape_action_notifications"
+			tools:ignore="ContentDescription" />
 	<TextView
 			android:layout_height="wrap_content"
 			android:layout_width="wrap_content"
