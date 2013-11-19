@@ -23,6 +23,7 @@
 
 package uk.co.sftrabbit.stackanswers;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -40,6 +41,7 @@ public class AuthFragment extends Fragment {
 	}
 
 	@Override
+	@SuppressLint("SetJavaScriptEnabled")
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
 		View contentView = inflater.inflate(R.layout.fragment_auth,
