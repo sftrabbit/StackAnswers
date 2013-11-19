@@ -38,6 +38,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
+import java.util.Collection;
 import uk.co.sftrabbit.stackanswers.R;
 import uk.co.sftrabbit.stackanswers.view.NavigationDrawer;
 
@@ -49,7 +50,7 @@ public class DrawerActivity extends Activity
 	private NavigationDrawer navigationDrawer;
 	private DrawerToggle drawerToggle;
 	private boolean isTouchEnabled = true;
-	private final ArrayList<MenuItem> activityMenuItems =
+	private final Collection<MenuItem> activityMenuItems =
 		new ArrayList<MenuItem>();
 
 	@Override
