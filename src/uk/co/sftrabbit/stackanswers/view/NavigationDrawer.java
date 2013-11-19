@@ -37,7 +37,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
-import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
+import uk.co.sftrabbit.stackanswers.app.BaseActivity;
 import uk.co.sftrabbit.stackanswers.AuthenticationActivity;
 import uk.co.sftrabbit.stackanswers.NetworkActivity;
 import uk.co.sftrabbit.stackanswers.SettingsActivity;
@@ -103,8 +103,8 @@ public class NavigationDrawer extends LinearLayout
 		if (itemIntent != null) {
 			clickedItemIntent = itemIntent;
 
-			DrawerActivity drawerActivity =
-				(DrawerActivity) context;
+			BaseActivity drawerActivity =
+				(BaseActivity) context;
 			drawerActivity.setTouchEnabled(false);
 		}
 	}
@@ -115,8 +115,8 @@ public class NavigationDrawer extends LinearLayout
 			context.startActivity(clickedItemIntent);
 			clickedItemIntent = null;
 
-			DrawerActivity drawerActivity =
-				(DrawerActivity) context;
+			BaseActivity drawerActivity =
+				(BaseActivity) context;
 			drawerActivity.setTouchEnabled(true);
 		}
 	}

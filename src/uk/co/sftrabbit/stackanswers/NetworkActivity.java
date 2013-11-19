@@ -39,9 +39,9 @@ import android.widget.PopupMenu;
 import java.util.List;
 import java.util.Collections;
 import java.util.Arrays;
-import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
+import uk.co.sftrabbit.stackanswers.app.BaseActivity;
 
-public class NetworkActivity extends DrawerActivity {
+public class NetworkActivity extends BaseActivity {
 	public static final String EXTRA_TAB = "NetworkActivityTab";
 	public static final int TAB_NONE = -1;
 	public static final int TAB_HOT = 0;

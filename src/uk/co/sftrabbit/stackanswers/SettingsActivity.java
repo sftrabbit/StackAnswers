@@ -24,9 +24,9 @@
 package uk.co.sftrabbit.stackanswers;
 
 import android.os.Bundle;
-import uk.co.sftrabbit.stackanswers.app.DrawerActivity;
+import uk.co.sftrabbit.stackanswers.app.BaseActivity;
 
-public class SettingsActivity extends DrawerActivity {
+public class SettingsActivity extends BaseActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
