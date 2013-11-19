@@ -42,7 +42,7 @@ import java.util.Collection;
 import uk.co.sftrabbit.stackanswers.R;
 import uk.co.sftrabbit.stackanswers.view.NavigationDrawer;
 
-public class DrawerActivity extends Activity
+public abstract class DrawerActivity extends Activity
 		implements DrawerLayout.DrawerListener {
 	private ActionBar actionBar;
 	private CharSequence title;
