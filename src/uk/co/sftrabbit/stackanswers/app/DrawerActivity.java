@@ -48,8 +48,9 @@ public class DrawerActivity extends Activity
 	private DrawerLayout drawerLayout;
 	private NavigationDrawer navigationDrawer;
 	private DrawerToggle drawerToggle;
-	private ArrayList<MenuItem> activityMenuItems = new ArrayList<MenuItem>();
 	private boolean isTouchEnabled = true;
+	private final ArrayList<MenuItem> activityMenuItems =
+		new ArrayList<MenuItem>();
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
