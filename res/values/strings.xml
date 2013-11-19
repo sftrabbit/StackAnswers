@@ -48,4 +48,6 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 	<string name="fragment_tag_auth_info">auth_info</string>
 	<string name="fragment_tag_settings">settings</string>
+
+	<string name="button_continue">Continue</string>
 </resources>
