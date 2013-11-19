@@ -50,4 +50,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	<string name="fragment_tag_settings">settings</string>
 
 	<string name="button_continue">Continue</string>
+
+	<string name="desc_site_dropdown">More information</string>
+	<string name="desc_profile_image_placeholder">sftrabbit</string>
+	<string name="desc_gold_badges">Gold badges</string>
+	<string name="desc_silver_badges">Silver badges</string>
+	<string name="desc_bronze_badges">Bronze badges</string>
 </resources>

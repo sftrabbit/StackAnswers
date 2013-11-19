@@ -40,7 +40,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_alignParentStart="true"
 				android:layout_alignParentLeft="true"
 				android:paddingEnd="4dp"
-				android:paddingRight="4dp" />
+				android:paddingRight="4dp"
+				tools:ignore="ContentDescription" />
 		<TextView
 				android:id="@+id/site_title"
 				android:layout_width="wrap_content"
@@ -57,7 +58,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_alignParentBottom="true"
 				android:layout_alignParentEnd="true"
 				android:layout_alignParentRight="true"
-				android:onClick="onDropdownClick" />
+				android:onClick="onDropdownClick"
+				android:contentDescription="@string/desc_site_dropdown" />
 		<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -98,7 +100,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<ImageView
 				android:layout_width="32dp"
 				android:layout_height="32dp"
-				android:src="@drawable/profile_image_placeholder" />
+				android:src="@drawable/profile_image_placeholder"
+				android:contentDescription="@string/desc_profile_image_placeholder" />
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -114,7 +117,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_width="10dp"
 				android:layout_height="10dp"
 				android:layout_margin="4dp"
-				android:src="@drawable/shape_badge_gold" />
+				android:src="@drawable/shape_badge_gold"
+				android:contentDescription="@string/desc_gold_badges" />
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -125,7 +129,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_width="10dp"
 				android:layout_height="10dp"
 				android:layout_margin="4dp"
-				android:src="@drawable/shape_badge_silver" />
+				android:src="@drawable/shape_badge_silver"
+				android:contentDescription="@string/desc_silver_badges" />
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -136,7 +141,8 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 				android:layout_width="10dp"
 				android:layout_height="10dp"
 				android:layout_margin="4dp"
-				android:src="@drawable/shape_badge_bronze" />
+				android:src="@drawable/shape_badge_bronze"
+				android:contentDescription="@string/desc_bronze_badges" />
 		<TextView
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
