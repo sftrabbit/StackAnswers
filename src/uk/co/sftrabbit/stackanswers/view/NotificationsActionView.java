@@ -98,7 +98,7 @@ public class NotificationsActionView extends FrameLayout
 		final Toast tooltip = Toast.makeText(context, actionDescription,
 		                                     Toast.LENGTH_SHORT);
 		if (centerY < displayFrame.height()) {
-			tooltip.setGravity(Gravity.TOP | Gravity.RIGHT,
+			tooltip.setGravity(Gravity.TOP | Gravity.END,
 			                   screenWidth - screenPosition[0] - width / 2, height);
 		} else {
 			tooltip.setGravity(Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, height);
