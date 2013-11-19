@@ -23,7 +23,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
 <merge xmlns:android="http://schemas.android.com/apk/res/android">
 	<fragment
-		android:id="@+id/fragment_auth_info"
+		android:tag="@string/fragment_tag_auth_info"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
 		android:name="uk.co.sftrabbit.stackanswers.AuthInfoFragment" />
