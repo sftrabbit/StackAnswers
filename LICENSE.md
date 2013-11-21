@@ -1,5 +1,5 @@
-The MIT License
-===============
+The Expat License (MIT)
+=======================
 
 Copyright (C) 2013 Joseph Mansfield
 
