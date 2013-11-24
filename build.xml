@@ -14,4 +14,18 @@
 
 	<import file="custom_rules.xml" optional="true" />
 	<import file="${sdk.dir}/tools/ant/build.xml" />
+
+	<target
+			name="docs"
+			description="Generate code documentation"
+			depends="-build-setup">
+		<javadoc
+				doctitle="Stack Answers"
+				destdir="docs"
+				access="private"
+				use="true" 
+				sourcepath="gen;src"
+				classpath="${project.target.android.jar};libs/android-support-v13.jar"
+				linkoffline="http://d.android.com/reference ${sdk.dir}/docs/reference" />
+	</target>
 </project>
