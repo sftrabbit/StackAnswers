@@ -60,10 +60,12 @@ public class NavigationDrawer extends LinearLayout
 		this.context = context;
 
 		Intent hotIntent = new Intent(context, NetworkActivity.class);
-		hotIntent.putExtra(NetworkActivity.EXTRA_TAB, NetworkActivity.TAB_HOT);
+		hotIntent.putExtra(NetworkActivity.EXTRA_TAB_SELECTION,
+		                   NetworkActivity.TabSelection.TAB_HOT);
 
 		Intent sitesIntent = new Intent(context, NetworkActivity.class);
-		sitesIntent.putExtra(NetworkActivity.EXTRA_TAB, NetworkActivity.TAB_SITES);
+		sitesIntent.putExtra(NetworkActivity.EXTRA_TAB_SELECTION,
+		                     NetworkActivity.TabSelection.TAB_SITES);
 
 		final List<NavigationItem> items = Arrays.asList(new NavigationItem[] {
 			new NavigationItem(R.string.page_hot, hotIntent),

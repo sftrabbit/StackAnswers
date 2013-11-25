@@ -71,35 +71,25 @@ public class NetworkActivity extends BaseActivity {
 
 	/**
 	 * Name of extra data for identifying which tab should be selected when this
-	 * activity is launched by {@link android.content.Intent}. The associated data
-	 * must be one of {@link #TAB_NONE}, {@link #TAB_HOT}, and {@link #TAB_SITES}.
+	 * activity is launched by an {@link android.content.Intent}. The associated
+	 * data must be a {@link TabSelection}.
 	 * 
-	 * @see android.content.Intent#putExtra(String,int)
+	 * @see TabSelection
+	 * @see android.content.Intent#putExtra(String,Serializable)
 	 */
-	public static final String EXTRA_TAB = "NetworkActivityTab";
+	public static final String EXTRA_TAB_SELECTION =
+		"NetworkActivityTabSelection";
 
 	/**
-	 * Extra data that specifies that the currently selected tab will not change
-	 * if the activity is not being created (such as when it is already at the top
-	 * of the back stack). 
+	 * Extra data for identifying which tab should be selected when the activity
+	 * is launched.
 	 * 
-	 * @see #EXTRA_TAB
+	 * @see #EXTRA_TAB_SELECTION
 	 */
-	public static final int TAB_NONE = -1;
-
-	/**
-	 * Extra data that specifies that the "What's hot" tab should be selected.
-	 * 
-	 * @see #EXTRA_TAB
-	 */
-	public static final int TAB_HOT = 0;
-
-	/**
-	 * Extra data that specifies that the "Sites" tab should be selected.
-	 * 
-	 * @see #EXTRA_TAB
-	 */
-	public static final int TAB_SITES = 1;
+	public enum TabSelection {
+		TAB_HOT,
+		TAB_SITES
+	}
 
 	private ActionBar actionBar;
 	private ViewPager tabPager;
@@ -206,9 +196,16 @@ public class NetworkActivity extends BaseActivity {
 		Intent intent = getIntent();
 		Bundle extras = intent.getExtras();
 		if (extras != null) {
-			int tabIndex = extras.getInt(EXTRA_TAB, TAB_NONE);
-			if (tabIndex != TAB_NONE) {
-				actionBar.selectTab(actionBar.getTabAt(tabIndex));
+			TabSelection tabSelection =
+				(TabSelection) extras.getSerializable(EXTRA_TAB_SELECTION);
+			if (tabSelection != null) {
+				switch (tabSelection) {
+					case TAB_HOT:
+						actionBar.selectTab(actionBar.getTabAt(0));
+						break;
+					case TAB_SITES:
+						actionBar.selectTab(actionBar.getTabAt(1));
+				}
 			}
 		}
 	}
