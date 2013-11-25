@@ -40,6 +40,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import uk.co.sftrabbit.stackanswers.app.BaseActivity;
 
 /**
@@ -94,7 +95,7 @@ public class NetworkActivity extends BaseActivity {
 
 	private ActionBar actionBar;
 	private ViewPager tabPager;
-	private HashMap<TabSelection, Integer> tabSelectionIndices =
+	private final Map<TabSelection, Integer> tabSelectionIndices =
 		new HashMap<TabSelection, Integer>();
 
 	private static final List<TabSpec> TAB_SPECS =
