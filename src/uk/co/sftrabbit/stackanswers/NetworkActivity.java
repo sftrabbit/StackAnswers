@@ -265,6 +265,9 @@ public class NetworkActivity extends BaseActivity {
 				if (fragmentClass == null) {
 					return new Fragment();
 				} else {
+					assert Fragment.class.isAssignableFrom(fragmentClass) :
+						"Class " + fragmentClass.getName() + " is not a Fragment subclass.";
+
 					return (Fragment) fragmentClass.getConstructor().newInstance();
 				}
 			} catch (Exception exception) {
