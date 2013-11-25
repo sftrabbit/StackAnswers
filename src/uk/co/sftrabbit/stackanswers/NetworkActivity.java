@@ -104,11 +104,11 @@ public class NetworkActivity extends BaseActivity {
 	private ActionBar actionBar;
 	private ViewPager tabPager;
 
-	//TODO - give content descriptions for accessibility
 	private static final List<TabSpec> TAB_SPECS =
 		Collections.unmodifiableList(Arrays.asList(
-			new TabSpec(R.string.page_hot, 0, null),
-			new TabSpec(R.string.page_sites, 0, SitesFragment.class)
+			new TabSpec(R.string.page_hot, R.string.page_hot_desc, null),
+			new TabSpec(R.string.page_sites, R.string.page_sites_desc,
+			            SitesFragment.class)
 		));
 
 	/**

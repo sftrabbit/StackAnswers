@@ -25,7 +25,13 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	<string name="application_name">Stack Answers</string>
 
 	<string name="page_hot">What\'s hot</string>
+	<string name="page_hot_desc">
+		Popular questions and answers from the Stack Exchange network.
+	</string>
 	<string name="page_sites">Sites</string>
+	<string name="page_sites_desc">
+		Directory of Stack Exchange question and answer sites.
+	</string>
 	<string name="page_authenticate">Log in</string>
 	<string name="page_settings">Settings</string>
 
