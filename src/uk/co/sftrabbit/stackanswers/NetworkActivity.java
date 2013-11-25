@@ -277,7 +277,7 @@ public class NetworkActivity extends BaseActivity {
 	}
 
 	/**
-	 * An view pager adapter that pages fragments according to the activity's tab
+	 * A view pager adapter that pages fragments according to the activity's tab
 	 * specifications.
 	 * 
 	 * @see android.support.v4.view.ViewPager
