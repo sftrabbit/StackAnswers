@@ -1,4 +1,5 @@
 Stack Answers
 =============
 
-Browse the StackExchange network on your Android devices.
+Browse the [Stack Exchange](http://http://stackexchange.com/) network on your
+Android devices.
