@@ -36,9 +36,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.widget.PopupMenu;
-import java.util.List;
-import java.util.Collections;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 import uk.co.sftrabbit.stackanswers.app.BaseActivity;
 
 /**
@@ -93,12 +94,15 @@ public class NetworkActivity extends BaseActivity {
 
 	private ActionBar actionBar;
 	private ViewPager tabPager;
+	private HashMap<TabSelection, Integer> tabSelectionIndices =
+		new HashMap<TabSelection, Integer>();
 
 	private static final List<TabSpec> TAB_SPECS =
 		Collections.unmodifiableList(Arrays.asList(
-			new TabSpec(R.string.page_hot, R.string.page_hot_desc, null),
+			new TabSpec(R.string.page_hot, R.string.page_hot_desc,
+			            null, TabSelection.TAB_HOT),
 			new TabSpec(R.string.page_sites, R.string.page_sites_desc,
-			            SitesFragment.class)
+			            SitesFragment.class, TabSelection.TAB_SITES)
 		));
 
 	/**
@@ -182,6 +186,11 @@ public class NetworkActivity extends BaseActivity {
 	 * @param tabSpec specification of the tab to add
 	 */
 	private void addTab(TabSpec tabSpec) {
+		TabSelection tabSelection = tabSpec.getTabSelection();
+		if (tabSelection != null) {
+			tabSelectionIndices.put(tabSelection, actionBar.getTabCount());
+		}
+
 		final ActionBar.Tab tab = actionBar.newTab();
 		tab.setTabListener(new TabListener(tabPager, getDrawerLayout()));
 		actionBar.addTab(tabSpec.applyTo(tab));
@@ -199,13 +208,8 @@ public class NetworkActivity extends BaseActivity {
 			TabSelection tabSelection =
 				(TabSelection) extras.getSerializable(EXTRA_TAB_SELECTION);
 			if (tabSelection != null) {
-				switch (tabSelection) {
-					case TAB_HOT:
-						actionBar.selectTab(actionBar.getTabAt(0));
-						break;
-					case TAB_SITES:
-						actionBar.selectTab(actionBar.getTabAt(1));
-				}
+				int tabIndex = tabSelectionIndices.get(tabSelection);
+				actionBar.selectTab(actionBar.getTabAt(tabIndex));
 			}
 		}
 	}
@@ -219,6 +223,7 @@ public class NetworkActivity extends BaseActivity {
 		private final int tabTextResourceId;
 		private final int contentDescriptionResourceId;
 		private final Class fragmentClass;
+		private final TabSelection tabSelection;
 
 		/**
 		 * Constructs a <code>TabSpec</code> with the given properties.
@@ -228,12 +233,14 @@ public class NetworkActivity extends BaseActivity {
 		 *        content description
 		 * @param fragmentClass a subclass of {@link android.app.Fragment} to
 		 *        instantiate for this tab
+		 * @param tabSelection the corresponding tab selection extra value
 		 */
 		public TabSpec(int tabTextResourceId, int contentDescriptionResourceId,
-		               Class fragmentClass) {
+		               Class fragmentClass, TabSelection tabSelection) {
 			this.tabTextResourceId = tabTextResourceId;
 			this.contentDescriptionResourceId = contentDescriptionResourceId;
 			this.fragmentClass = fragmentClass;
+			this.tabSelection = tabSelection;
 		}
 
 		/**
@@ -270,6 +277,15 @@ public class NetworkActivity extends BaseActivity {
 			} catch (Exception exception) {
 				return null;
 			}
+		}
+
+		/**
+		 * Gets corresponding tab selection extra value.
+		 * 
+		 * @return corresponding tab selection extra value
+		 */
+		public TabSelection getTabSelection() {
+			return tabSelection;
 		}
 	}
 
