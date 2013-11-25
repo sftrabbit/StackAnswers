@@ -82,17 +82,6 @@ public class NetworkActivity extends BaseActivity {
 	public static final String EXTRA_TAB_SELECTION =
 		"NetworkActivityTabSelection";
 
-	/**
-	 * Extra data for identifying which tab should be selected when the activity
-	 * is launched.
-	 * 
-	 * @see #EXTRA_TAB_SELECTION
-	 */
-	public enum TabSelection {
-		TAB_HOT,
-		TAB_SITES
-	}
-
 	private ActionBar actionBar;
 	private ViewPager tabPager;
 	private final Map<TabSelection, Integer> tabSelectionIndices =
@@ -288,6 +277,17 @@ public class NetworkActivity extends BaseActivity {
 		public TabSelection getTabSelection() {
 			return tabSelection;
 		}
+	}
+
+	/**
+	 * Extra data for identifying which tab should be selected when the activity
+	 * is launched.
+	 * 
+	 * @see #EXTRA_TAB_SELECTION
+	 */
+	public enum TabSelection {
+		TAB_HOT,
+		TAB_SITES
 	}
 
 	/**
