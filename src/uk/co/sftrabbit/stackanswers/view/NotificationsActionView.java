@@ -30,8 +30,8 @@ import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Gravity;
+import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageButton;
 import android.widget.Toast;
 import uk.co.sftrabbit.stackanswers.R;
 
@@ -52,8 +52,8 @@ public class NotificationsActionView extends FrameLayout
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		inflater.inflate(R.layout.action_notifications, this);
 
-		final ImageButton button =
-			(ImageButton) findViewById(R.id.button_notifications);
+		final Button button =
+			(Button) findViewById(R.id.button_notifications);
 		assert button != null : "No button in notifications action layout";
 		button.setOnClickListener(this);
 		button.setOnLongClickListener(this);

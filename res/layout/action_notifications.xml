@@ -21,23 +21,17 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-<FrameLayout
-		xmlns:android="http://schemas.android.com/apk/res/android"
-		xmlns:tools="http://schemas.android.com/tools"
-		android:layout_height="wrap_content"
-		android:layout_width="wrap_content">
-	<ImageButton
+	<Button xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
 			style="@android:style/Widget.ActionButton"
 			android:id="@+id/button_notifications"
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:src="@drawable/shape_action_notifications"
-			tools:ignore="ContentDescription" />
-	<TextView
-			android:layout_height="wrap_content"
-			android:layout_width="wrap_content"
-			android:layout_gravity="center"
-			android:textColor="@color/notifications_indicator"
+			android:layout_height="32dp"
+			android:layout_width="32dp"
+			android:layout_margin="8dp"
+			android:padding="0dp"
+			android:background="@drawable/shape_action_notifications"
 			android:text="19"
-			tools:ignore="HardcodedText" />
-</FrameLayout>
+			android:textColor="@color/notifications_indicator"
+			android:singleLine="true"
+			android:ellipsize="none"
+			tools:ignore="HardcodedText,ContentDescription" />
