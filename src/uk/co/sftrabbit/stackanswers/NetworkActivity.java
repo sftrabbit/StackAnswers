@@ -102,7 +102,7 @@ public class NetworkActivity extends BaseActivity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_network);
+		setContentView(R.layout.view_pager);
 
 		actionBar = getActionBar();
 		assert actionBar != null : "No action bar in activity";

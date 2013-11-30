@@ -50,7 +50,7 @@ public class NotificationsActionView extends FrameLayout
 
 		final LayoutInflater inflater = (LayoutInflater) context
 			.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-		inflater.inflate(R.layout.action_notifications, this);
+		inflater.inflate(R.layout.notification_button, this);
 
 		final Button button =
 			(Button) findViewById(R.id.button_notifications);

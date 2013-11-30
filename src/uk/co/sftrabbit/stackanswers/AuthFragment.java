@@ -44,7 +44,7 @@ public class AuthFragment extends Fragment {
 	@SuppressLint("SetJavaScriptEnabled")
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 	                         Bundle savedInstanceState) {
-		View contentView = inflater.inflate(R.layout.fragment_auth,
+		View contentView = inflater.inflate(R.layout.authentication,
 		                                    container, false);
 
 		final ProgressBar progressBar =

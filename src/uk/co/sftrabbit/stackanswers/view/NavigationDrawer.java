@@ -83,7 +83,7 @@ public class NavigationDrawer extends LinearLayout
 			                              ViewGroup.LayoutParams.MATCH_PARENT));
 
 		navigationAdapter = new NavigationDrawerAdapter(context, items,
-			R.layout.list_item_navigation);
+			R.layout.navigation_item);
 		navigationListView.setAdapter(navigationAdapter);
 
 		navigationListView.setOnItemClickListener(this);

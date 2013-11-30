@@ -57,7 +57,7 @@ public abstract class BaseActivity extends Activity
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		super.setContentView(R.layout.activity_base);
+		super.setContentView(R.layout.drawer_frame);
 
 		actionBar = getActionBar();
 		assert actionBar != null : "No action bar in activity";

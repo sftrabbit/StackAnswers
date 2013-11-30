@@ -65,7 +65,7 @@ public class SitesFragment extends ListFragment {
 		super.onCreate(savedInstanceState);
 
 		setListAdapter(new SitesAdapter(getActivity(), sites,
-		               R.layout.list_item_site));
+		               R.layout.site_card));
 	}
 
 	@Override
