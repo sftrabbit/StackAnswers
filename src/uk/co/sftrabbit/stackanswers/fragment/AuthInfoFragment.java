@@ -21,13 +21,14 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package uk.co.sftrabbit.stackanswers;
+package uk.co.sftrabbit.stackanswers.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import uk.co.sftrabbit.stackanswers.R;
 
 public class AuthInfoFragment extends Fragment {
 	public AuthInfoFragment() {

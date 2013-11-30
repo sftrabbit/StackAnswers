@@ -21,7 +21,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package uk.co.sftrabbit.stackanswers;
+package uk.co.sftrabbit.stackanswers.fragment;
 
 import android.app.ListFragment;
 import android.content.Context;
@@ -38,6 +38,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import java.util.Arrays;
 import java.util.List;
+import uk.co.sftrabbit.stackanswers.R;
 
 public class SitesFragment extends ListFragment {
 	private final List<Site> sites = Arrays.asList(new Site[] {

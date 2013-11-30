@@ -25,4 +25,4 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 	android:tag="@string/fragment_tag_settings"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:name="uk.co.sftrabbit.stackanswers.SettingsFragment" />
+	android:name="uk.co.sftrabbit.stackanswers.fragment.SettingsFragment" />

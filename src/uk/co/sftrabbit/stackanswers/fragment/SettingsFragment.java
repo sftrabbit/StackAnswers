@@ -21,10 +21,11 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package uk.co.sftrabbit.stackanswers;
+package uk.co.sftrabbit.stackanswers.fragment;
 
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
+import uk.co.sftrabbit.stackanswers.R;
 
 public class SettingsFragment extends PreferenceFragment {
 	public SettingsFragment() {

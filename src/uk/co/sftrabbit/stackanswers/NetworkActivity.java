@@ -42,6 +42,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import uk.co.sftrabbit.stackanswers.app.BaseActivity;
+import uk.co.sftrabbit.stackanswers.fragment.SitesFragment;
 
 /**
  * An activity that gives the user a global view of the Stack Exchange network.

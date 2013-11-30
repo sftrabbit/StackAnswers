@@ -26,6 +26,7 @@ package uk.co.sftrabbit.stackanswers;
 import android.os.Bundle;
 import android.view.View;
 import uk.co.sftrabbit.stackanswers.app.BaseActivity;
+import uk.co.sftrabbit.stackanswers.fragment.AuthFragment;
 
 public class AuthenticationActivity extends BaseActivity {
 	@Override

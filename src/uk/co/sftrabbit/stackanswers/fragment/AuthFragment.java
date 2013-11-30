@@ -21,7 +21,7 @@
  * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-package uk.co.sftrabbit.stackanswers;
+package uk.co.sftrabbit.stackanswers.fragment;
 
 import android.annotation.SuppressLint;
 import android.app.Fragment;
@@ -34,6 +34,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
+import uk.co.sftrabbit.stackanswers.R;
 
 public class AuthFragment extends Fragment {
 	public AuthFragment() {
