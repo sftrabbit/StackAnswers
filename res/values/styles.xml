@@ -28,6 +28,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<item name="android:actionBarTabTextStyle">@style/Widget.ActionBar.TabText</item>
 		<item name="android:windowBackground">@color/application_background</item>
 		<item name="android:colorBackground">@color/application_background</item>
+		<item name="android:textViewStyle">@style/Widget.TextView</item>
 	</style>
   
 	<style
@@ -48,6 +49,7 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 			name="Widget.ActionBar.TabText"
 			parent="@android:style/Widget.Holo.ActionBar.TabText">
 		<item name="android:textColor">?android:attr/textColorSecondary</item>
+		<item name="android:textStyle">normal</item>
 	</style>
 
 	<style
@@ -90,6 +92,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		<item name="android:background">@color/tag_background</item>
 		<item name="android:textColor">@color/tag_text</item>
 		<item name="android:textAppearance">@android:style/TextAppearance.Small</item>
+	</style>
+
+	<style name="Widget.TextView" parent="@android:style/Widget.TextView">
+		<item name="android:fontFamily">sans-serif-light</item>
 	</style>
 
 	<style
