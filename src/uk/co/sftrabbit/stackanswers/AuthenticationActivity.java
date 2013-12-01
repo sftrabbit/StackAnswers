@@ -29,6 +29,7 @@ import android.view.View;
 import uk.co.sftrabbit.stackanswers.app.BaseActivity;
 import uk.co.sftrabbit.stackanswers.fragment.AuthFragment;
 
+//TODO - Remember current web page on orientation change
 public class AuthenticationActivity extends BaseActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
