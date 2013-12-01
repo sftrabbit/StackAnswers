@@ -40,7 +40,8 @@ public class AuthenticationActivity extends BaseActivity {
 
 	public void showAuthenticationPage(View view) {
 		getFragmentManager().beginTransaction()
-			.setCustomAnimations(R.animator.fragment_open_enter, 0)
+			.setCustomAnimations(R.animator.slide_in_right, 0,
+			                     0, R.animator.slide_out_right)
 			.replace(R.id.activity_content, new AuthFragment())
 			.addToBackStack(null)
 			.commit();

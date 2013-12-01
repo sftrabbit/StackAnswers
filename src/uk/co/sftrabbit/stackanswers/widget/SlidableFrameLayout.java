@@ -43,7 +43,11 @@ public class SlidableFrameLayout extends FrameLayout {
 
 	public void setXFraction(float xFraction) {
 		final int width = getWidth();
-		setX(xFraction * width);
+		if (width > 0) {
+			setX(xFraction * width);
+		} else {
+			setX(-10000);
+		}
 	}
 
 	public float getYFraction() {
@@ -52,6 +56,10 @@ public class SlidableFrameLayout extends FrameLayout {
 
 	public void setYFraction(float yFraction) {
 		final int height = getHeight();
-		setY(yFraction * height);
+		if (height > 0) {
+			setY(yFraction * height);
+		} else {
+			setY(-10000);
+		}
 	}
 }
