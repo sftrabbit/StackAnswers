@@ -23,6 +23,7 @@
  
 package uk.co.sftrabbit.stackanswers;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
 import uk.co.sftrabbit.stackanswers.app.BaseActivity;
@@ -42,8 +43,19 @@ public class AuthenticationActivity extends BaseActivity {
 		getFragmentManager().beginTransaction()
 			.setCustomAnimations(R.animator.slide_in_right, 0,
 			                     0, R.animator.slide_out_right)
-			.replace(R.id.activity_content, new AuthFragment())
+			.replace(R.id.activity_content, new AuthFragment(),
+			         AuthFragment.class.getName())
 			.addToBackStack(null)
 			.commit();
+	}
+
+	@Override
+	public void onBackPressed() {
+		FragmentManager fragmentManager = getFragmentManager();
+		AuthFragment authFragment = (AuthFragment) fragmentManager
+			.findFragmentByTag(AuthFragment.class.getName());
+		if (authFragment == null || !authFragment.onBackPressed()) {
+			super.onBackPressed();
+		}
 	}
 }

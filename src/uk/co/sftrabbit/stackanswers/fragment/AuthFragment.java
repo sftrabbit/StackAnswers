@@ -24,6 +24,7 @@
 package uk.co.sftrabbit.stackanswers.fragment;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -37,6 +38,8 @@ import android.widget.ProgressBar;
 import uk.co.sftrabbit.stackanswers.R;
 
 public class AuthFragment extends Fragment {
+	private WebView webView;
+
 	public AuthFragment() {
 		// Do nothing
 	}
@@ -51,8 +54,7 @@ public class AuthFragment extends Fragment {
 		final ProgressBar progressBar =
 			(ProgressBar) contentView.findViewById(R.id.authentication_progress);
 
-		WebView webView =
-			(WebView) contentView.findViewById(R.id.authentication_web_view);
+		webView = (WebView) contentView.findViewById(R.id.authentication_web_view);
 		webView.setWebViewClient(new WebViewClient());
 		webView.setWebChromeClient(new WebChromeClient() {
 			@Override
@@ -79,5 +81,12 @@ public class AuthFragment extends Fragment {
 		return contentView;
 	}
 
+	public boolean onBackPressed() {
+		if (webView.canGoBack()) {
+			webView.goBack();
+			return true;
+		}
 
+		return false;
+	}
 }
