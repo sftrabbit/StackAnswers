@@ -21,17 +21,22 @@ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 -->
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	android:layout_width="match_parent"
-	android:layout_height="match_parent">
-	<WebView
-			android:id="@+id/authentication_web_view"
+<uk.co.sftrabbit.stackanswers.widget.SlidableFrameLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+	<FrameLayout
 			android:layout_width="match_parent"
-			android:layout_height="match_parent" />
-	<ProgressBar
-			style="@style/Widget.ProgressBar.Horizontal.Slim"
-			android:id="@+id/authentication_progress"
-			android:layout_width="match_parent"
-			android:layout_height="wrap_content"
-			android:layout_gravity="top" />
-</FrameLayout>
+			android:layout_height="match_parent">
+		<WebView
+				android:id="@+id/authentication_web_view"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent" />
+		<ProgressBar
+				style="@style/Widget.ProgressBar.Horizontal.Slim"
+				android:id="@+id/authentication_progress"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_gravity="top" />
+	</FrameLayout>
+</uk.co.sftrabbit.stackanswers.widget.SlidableFrameLayout>
