@@ -152,8 +152,8 @@ public class NetworkActivity extends BaseActivity {
 	 * for tab selection changes.
 	 */
 	private void initTabPager() {
-		tabPager = (ViewPager) findViewById(R.id.tab_pager);
-		assert tabPager != null : "No tab pager in activity";
+		tabPager = (ViewPager) findViewById(R.id.view_pager);
+		assert tabPager != null : "No view pager in activity";
 
 		tabPager.setAdapter(new TabPagerAdapter(getFragmentManager()));
 		tabPager.setOnPageChangeListener(new TabPagerListener(actionBar));
