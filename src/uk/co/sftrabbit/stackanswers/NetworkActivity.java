@@ -29,7 +29,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
+import uk.co.sftrabbit.stackanswers.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.view.Menu;
