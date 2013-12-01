@@ -67,6 +67,8 @@ public class AuthFragment extends Fragment {
 				}
 			}
 		});
+		webView.setBackgroundColor(getResources()
+			.getColor(R.color.application_background));
 
 		WebSettings webSettings = webView.getSettings();
 		webSettings.setJavaScriptEnabled(true);
